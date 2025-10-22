@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import welcomeImage from '../assets/EAAF293A-696C-4EDF-A591-D739085DBD57-80723-00000DBAA73C3B18.png';
 
 const WelcomeScreen = () => {
   const [show, setShow] = useState(true);
@@ -39,7 +40,7 @@ const WelcomeScreen = () => {
           <h2 className="welcome-name-chinese">林泽瑄</h2>
         </div>
         <div className="welcome-image">
-          <img src="/src/assets/EAAF293A-696C-4EDF-A591-D739085DBD57-80723-00000DBAA73C3B18.png" alt="Jit" />
+          <img src={welcomeImage} alt="Jit" />
         </div>
       </div>
     </div>
