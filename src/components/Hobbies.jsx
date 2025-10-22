@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaYoutube } from 'react-icons/fa';
+import filming1 from '../assets/filming/DSCF1204.JPG';
+import filming2 from '../assets/filming/DSCF1477.JPG';
+import filming3 from '../assets/filming/DSCF1534.JPG';
+import filming4 from '../assets/filming/DSCF1674.JPG';
+import filming5 from '../assets/filming/DSCF1837.JPG';
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
@@ -7,11 +12,11 @@ const Hobbies = () => {
   const [fadeImage, setFadeImage] = useState(true);
 
   const filmingImages = [
-    '/src/assets/filming/DSCF1204.JPG',
-    '/src/assets/filming/DSCF1477.JPG',
-    '/src/assets/filming/DSCF1534.JPG',
-    '/src/assets/filming/DSCF1674.JPG',
-    '/src/assets/filming/DSCF1837.JPG'
+    filming1,
+    filming2,
+    filming3,
+    filming4,
+    filming5
   ];
 
   useEffect(() => {
