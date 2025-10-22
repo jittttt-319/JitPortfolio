@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaYoutube } from 'react-icons/fa';
-import filming1 from '../assets/filming/DSCF1204.JPG';
-import filming2 from '../assets/filming/DSCF1477.JPG';
-import filming3 from '../assets/filming/DSCF1534.JPG';
-import filming4 from '../assets/filming/DSCF1674.JPG';
-import filming5 from '../assets/filming/DSCF1837.JPG';
+import filming1 from '../assets/filming/DSCF1204.png';
+import filming2 from '../assets/filming/DSCF1477.png';
+import filming3 from '../assets/filming/DSCF1534.png';
+import filming4 from '../assets/filming/DSCF1674.png';
+import filming5 from '../assets/filming/DSCF1837.png';
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
