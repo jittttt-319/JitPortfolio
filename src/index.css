@@ -2661,6 +2661,74 @@ body {
   }
 }
 
+/* Theme Switcher Button */
+.theme-switcher {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--purple-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(168, 85, 247, 0.5);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  animation: fadeInUp 0.4s ease;
+  padding: 0;
+}
+
+.theme-switcher:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.7);
+  border-width: 3px;
+}
+
+.theme-color-preview {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.theme-switcher:hover .theme-color-preview {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .theme-switcher {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .theme-color-preview {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-switcher {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .theme-color-preview {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;

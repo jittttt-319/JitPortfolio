@@ -10,6 +10,7 @@ import Hobbies from './components/Hobbies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ThemeSwitcher from './components/ThemeSwitcher';
 import { Analytics } from "@vercel/analytics/react"
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Hobbies />
       <Contact />
       <Footer />
+      <ThemeSwitcher />
       <Analytics />
     </>
   );
