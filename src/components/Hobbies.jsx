@@ -5,6 +5,10 @@ import filming2 from '../assets/filming/DSCF1477.png';
 import filming3 from '../assets/filming/DSCF1534.png';
 import filming4 from '../assets/filming/DSCF1674.png';
 import filming5 from '../assets/filming/DSCF1837.png';
+import filming5 from '../assets/filming/DSCF1893.png';
+import filming5 from '../assets/filming/DSCF1901.png';
+import filming5 from '../assets/filming/DSCF1904.png';
+import filming5 from '../assets/filming/DSCF1914.png';
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
