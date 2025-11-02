@@ -5,10 +5,10 @@ import filming2 from '../assets/filming/DSCF1477.png';
 import filming3 from '../assets/filming/DSCF1534.png';
 import filming4 from '../assets/filming/DSCF1674.png';
 import filming5 from '../assets/filming/DSCF1837.png';
-import filming5 from '../assets/filming/DSCF1893.png';
-import filming5 from '../assets/filming/DSCF1901.png';
-import filming5 from '../assets/filming/DSCF1904.png';
-import filming5 from '../assets/filming/DSCF1914.png';
+import filming6 from '../assets/filming/DSCF1893.png';
+import filming7 from '../assets/filming/DSCF1901.png';
+import filming8 from '../assets/filming/DSCF1904.png';
+import filming9 from '../assets/filming/DSCF1914.png';
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
@@ -20,7 +20,11 @@ const Hobbies = () => {
     filming2,
     filming3,
     filming4,
-    filming5
+    filming5,
+    filming6,
+    filming7,
+    filming8,
+    filming9
   ];
 
   useEffect(() => {
