@@ -9,7 +9,7 @@ const Education = () => {
       school: 'Tunku Abdul Rahman University of Management and Technology',
       location: 'Kuala Lumpur, Malaysia',
       period: 'July 2024 - July 2026',
-      description: 'CGPA: 3.89',
+      description: 'CGPA: 3.90',
       link: 'https://focs.tarc.edu.my/programmes/bachelor-degree/bachelor-of-software-engineering-honours-rsw'
     },
     {
