@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import aboutImage from '../assets/IMG_8032.png';
+=======
+>>>>>>> parent of e7ade72 (update image)
 
 const About = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -53,7 +56,7 @@ const About = () => {
             </p>
           </div>
           <div className="about-image">
-            <img src={aboutImage} alt="About Jit" />
+            <img src="/src/assets/IMG_8032.jpeg" alt="About Jit" />
           </div>
         </div>
       </div>
