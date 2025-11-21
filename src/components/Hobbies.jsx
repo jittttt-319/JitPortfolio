@@ -11,10 +11,14 @@ import filming3 from '../assets/filming/DSCF1534.png';
 import filming4 from '../assets/filming/DSCF1674.png';
 import filming5 from '../assets/filming/DSCF1837.png';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e7a47a8 (Update Hobbies.jsx)
 import filming5 from '../assets/filming/DSCF1893.png';
 import filming5 from '../assets/filming/DSCF1901.png';
 import filming5 from '../assets/filming/DSCF1904.png';
 import filming5 from '../assets/filming/DSCF1914.png';
+<<<<<<< HEAD
 =======
 >>>>>>> parent of e7ade72 (update image)
 =======
@@ -35,6 +39,8 @@ import filming5 from '../assets/filming/DSCF1837.JPG';
 >>>>>>> parent of fc168a3 (png)
 =======
 >>>>>>> parent of 089562f (update)
+=======
+>>>>>>> parent of e7a47a8 (Update Hobbies.jsx)
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
@@ -42,11 +48,19 @@ const Hobbies = () => {
   const [fadeImage, setFadeImage] = useState(true);
 
   const filmingImages = [
+<<<<<<< HEAD
     '/src/assets/filming/DSCF1204.JPG',
     '/src/assets/filming/DSCF1477.JPG',
     '/src/assets/filming/DSCF1534.JPG',
     '/src/assets/filming/DSCF1674.JPG',
     '/src/assets/filming/DSCF1837.JPG'
+=======
+    filming1,
+    filming2,
+    filming3,
+    filming4,
+    filming5
+>>>>>>> parent of e7a47a8 (Update Hobbies.jsx)
   ];
 
   useEffect(() => {
