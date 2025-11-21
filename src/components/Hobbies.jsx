@@ -10,6 +10,7 @@ import filming2 from '../assets/filming/DSCF1477.png';
 import filming3 from '../assets/filming/DSCF1534.png';
 import filming4 from '../assets/filming/DSCF1674.png';
 import filming5 from '../assets/filming/DSCF1837.png';
+<<<<<<< HEAD
 import filming5 from '../assets/filming/DSCF1893.png';
 import filming5 from '../assets/filming/DSCF1901.png';
 import filming5 from '../assets/filming/DSCF1904.png';
@@ -32,6 +33,8 @@ import filming5 from '../assets/filming/DSCF1837.JPG';
 >>>>>>> parent of 1a46e5f (update path)
 =======
 >>>>>>> parent of fc168a3 (png)
+=======
+>>>>>>> parent of 089562f (update)
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
