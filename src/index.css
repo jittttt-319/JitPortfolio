@@ -776,7 +776,7 @@ section {
   }
 
   #hero h3 {
-    font-size: clamp(2.5rem, 9vw, 3.5rem) !important;
+    font-size: clamp(2rem, 8vw, 3rem) !important;
     margin-bottom: 1.5rem !important;
     line-height: 1.5 !important;
     font-weight: 500 !important;
@@ -917,7 +917,7 @@ section {
   }
 
   #hero h3 {
-    font-size: clamp(2.25rem, 9vw, 3.25rem) !important;
+    font-size: clamp(1.9rem, 8vw, 2.75rem) !important;
     margin-bottom: 1.25rem !important;
     line-height: 1.6 !important;
   }
