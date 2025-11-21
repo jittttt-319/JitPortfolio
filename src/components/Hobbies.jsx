@@ -3,6 +3,7 @@ import { FaYoutube } from 'react-icons/fa';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import filming1 from '../assets/filming/DSCF1204.png';
 import filming2 from '../assets/filming/DSCF1477.png';
 import filming3 from '../assets/filming/DSCF1534.png';
@@ -23,6 +24,8 @@ import filming3 from '../assets/filming/DSCF1534.JPG';
 import filming4 from '../assets/filming/DSCF1674.JPG';
 import filming5 from '../assets/filming/DSCF1837.JPG';
 >>>>>>> parent of 787bf58 (update)
+=======
+>>>>>>> parent of 1a46e5f (update path)
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
@@ -30,11 +33,11 @@ const Hobbies = () => {
   const [fadeImage, setFadeImage] = useState(true);
 
   const filmingImages = [
-    filming1,
-    filming2,
-    filming3,
-    filming4,
-    filming5
+    '/src/assets/filming/DSCF1204.JPG',
+    '/src/assets/filming/DSCF1477.JPG',
+    '/src/assets/filming/DSCF1534.JPG',
+    '/src/assets/filming/DSCF1674.JPG',
+    '/src/assets/filming/DSCF1837.JPG'
   ];
 
   useEffect(() => {

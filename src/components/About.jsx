@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import aboutImage from '../assets/IMG_8032.png';
 =======
 >>>>>>> parent of e7ade72 (update image)
@@ -10,6 +11,8 @@ import aboutImage from '../assets/IMG_8032.png';
 =======
 import aboutImage from '../assets/IMG_8032.jpeg';
 >>>>>>> parent of 787bf58 (update)
+=======
+>>>>>>> parent of 1a46e5f (update path)
 
 const About = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -64,10 +67,14 @@ const About = () => {
           </div>
           <div className="about-image">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <img src="/src/assets/IMG_8032.jpeg" alt="About Jit" />
 =======
             <img src={aboutImage} alt="About Jit" />
 >>>>>>> parent of 787bf58 (update)
+=======
+            <img src="/src/assets/IMG_8032.png" alt="About Jit" />
+>>>>>>> parent of 1a46e5f (update path)
           </div>
         </div>
       </div>
