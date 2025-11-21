@@ -16,9 +16,6 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
   return (
     <>
-      <div className="grain-overlay"></div>
-      <div className="cursor-dot"></div>
-      <div className="cursor-outline"></div>
       <WelcomeScreen />
       <div className="animated-bg"></div>
       <Navbar />
