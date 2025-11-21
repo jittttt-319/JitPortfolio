@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import welcomeImage from '../assets/EAAF293A-696C-4EDF-A591-D739085DBD57-80723-00000DBAA73C3B18.png';
+=======
+>>>>>>> parent of e7ade72 (update image)
 =======
 >>>>>>> parent of e7ade72 (update image)
 

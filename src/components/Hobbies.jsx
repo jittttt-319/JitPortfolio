@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaYoutube } from 'react-icons/fa';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import filming1 from '../assets/filming/DSCF1204.png';
 import filming2 from '../assets/filming/DSCF1477.png';
 import filming3 from '../assets/filming/DSCF1534.png';
@@ -10,6 +11,8 @@ import filming5 from '../assets/filming/DSCF1893.png';
 import filming5 from '../assets/filming/DSCF1901.png';
 import filming5 from '../assets/filming/DSCF1904.png';
 import filming5 from '../assets/filming/DSCF1914.png';
+=======
+>>>>>>> parent of e7ade72 (update image)
 =======
 >>>>>>> parent of e7ade72 (update image)
 

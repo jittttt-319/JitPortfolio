@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import aboutImage from '../assets/IMG_8032.png';
+=======
+>>>>>>> parent of e7ade72 (update image)
 =======
 >>>>>>> parent of e7ade72 (update image)
 
