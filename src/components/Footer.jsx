@@ -22,7 +22,7 @@ const Footer = () => {
                 <a href="https://github.com/jittttt-319" target="_blank" rel="noopener noreferrer" style={styles.link}>GitHub</a>
                 <a href="https://www.instagram.com/jitxuannnnnn/" target="_blank" rel="noopener noreferrer" style={styles.link}>Instagram</a>
             </div>
-            <p>© 2025 Jit (林泽瑄). All rights reserved.</p>
+            <p style={{ fontSize: '0.7rem' }}>© 2025 Jit (林泽瑄). All rights reserved.</p>
         </footer>
     );
 };

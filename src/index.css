@@ -28,6 +28,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Ensure no content sticks to edges */
+body > * {
+  min-width: 0;
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -57,6 +68,14 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Ensure all sections have proper spacing */
+section {
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
 }
 
 section {
@@ -87,7 +106,7 @@ section {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 4px;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   font-family: var(--font-mono);
   font-size: 1rem;
   cursor: pointer;
@@ -609,7 +628,29 @@ section {
 /* Mobile and Small Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+
+  /* Ensure all content has spacing */
+  section.container,
+  section > .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Specific sections that need spacing */
+  section#experience.container,
+  section#hobbies.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Override any inline styles that might remove padding */
+  section#experience[class*="container"],
+  section#hobbies[class*="container"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
 
   section {
@@ -718,12 +759,18 @@ section {
   }
 
   nav {
-    padding: 1rem !important;
+    padding: 1rem 1.25rem !important;
     position: relative;
+    box-sizing: border-box;
   }
 
   nav > div:first-child {
     font-size: 1.25rem !important;
+    margin-left: 0;
+  }
+
+  nav .mobile-menu-btn {
+    margin-right: 0;
   }
 
   /* Ensure mobile menu covers everything */
@@ -740,6 +787,38 @@ section {
   /* Better spacing for mobile sections */
   section {
     padding: 3rem 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Ensure all direct children of sections have spacing */
+  section > * {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  section.container > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Contact section - ensure spacing */
+  section#contact.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Cards and content blocks - ensure spacing */
+  [style*="backgroundColor: #112240"],
+  [style*="background-color: #112240"] {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Grids - ensure spacing */
+  [style*="display: grid"] {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   /* Footer - Better mobile */
@@ -751,6 +830,11 @@ section {
   footer a {
     margin: 0 0.5rem !important;
     font-size: 0.875rem !important;
+  }
+
+  footer p {
+    font-size: 0.65rem !important;
+    margin-top: 0.5rem;
   }
 
   /* Hero Section - Better mobile sizing and styling */
@@ -786,8 +870,14 @@ section {
 
   /* Hero section container */
   #hero.container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Ensure hero content doesn't stick */
+  #hero > * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* Section Titles - Better mobile */
@@ -880,10 +970,41 @@ section {
   }
 }
 
-/* Small Mobile (max-width: 480px) */
+  /* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
   .container {
-    padding: 0 0.75rem;
+    padding: 0 1rem;
+  }
+
+  /* Ensure all content has spacing on small mobile */
+  section.container,
+  section > .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Contact section on small mobile */
+  section#contact.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Experience and Hobbies on small mobile */
+  section#experience.container,
+  section#hobbies.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Ensure direct children have spacing */
+  section > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section.container > * {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   section {
@@ -975,6 +1096,13 @@ section {
   /* Contact section - Better mobile */
   section#contact {
     padding: 3rem 0 !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  section#contact.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
 
   section#contact h2 {
@@ -983,6 +1111,13 @@ section {
 
   section#contact p {
     font-size: 1.1rem !important;
+  }
+
+  /* Contact button - better padding */
+  section#contact .btn {
+    padding: 1rem 2.5rem !important;
+    font-size: 1.05rem !important;
+    margin-top: 0.5rem;
   }
 
   /* Skill Tags - Smaller on mobile */
@@ -1008,6 +1143,30 @@ section {
   /* Experience - Better mobile */
   section#experience {
     padding: 3rem 0 !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  section#experience.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Experience timeline - ensure spacing */
+  /* Experience timeline - ensure spacing */
+  section#experience [style*="position: relative"][style*="maxWidth"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  section#experience [style*="backgroundColor: #112240"],
+  section#experience [style*="background-color: #112240"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   /* Projects - Better mobile cards */
@@ -1026,6 +1185,30 @@ section {
   /* Hobbies - Better mobile */
   section#hobbies {
     padding: 3rem 0 !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  section#hobbies.container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Hobbies grid - ensure spacing */
+  section#hobbies .hobbies-grid,
+  section#hobbies [style*="display: grid"][style*="gridTemplateColumns"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  section#hobbies [style*="backgroundColor: #112240"],
+  section#hobbies [style*="background-color: #112240"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   /* Welcome Screen */
