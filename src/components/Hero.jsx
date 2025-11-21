@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope } from 'react-icons/fa';
+import heroImage from '../assets/DSCF1512.JPG';
 
 const Hero = () => {
   const [showEmailModal, setShowEmailModal] = useState(false);
@@ -29,7 +30,11 @@ const Hero = () => {
         <div className="container">
           <div className="hero-content">
             <div className="hero-image">
+<<<<<<< HEAD
               <img src="/src/assets/DSCF1512.jpg" alt="Jit" />
+=======
+              <img src={heroImage} alt="Jit" />
+>>>>>>> parent of 53824fd (update)
             </div>
             <h1>Hi, I'm Jit</h1>
             <p className="subtitle">Software Engineer</p>

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import welcomeImage from '../assets/EAAF293A-696C-4EDF-A591-D739085DBD57-80723-00000DBAA73C3B18.png';
 =======
 >>>>>>> parent of e7ade72 (update image)
 =======
 >>>>>>> parent of e7ade72 (update image)
+=======
+import welcomeImage from '../assets/EAAF293A-696C-4EDF-A591-D739085DBD57-80723-00000DBAA73C3B18.jpg';
+>>>>>>> parent of 53824fd (update)
 
 const WelcomeScreen = () => {
   const [show, setShow] = useState(true);
@@ -46,7 +50,11 @@ const WelcomeScreen = () => {
           <h2 className="welcome-name-chinese">林泽瑄</h2>
         </div>
         <div className="welcome-image">
+<<<<<<< HEAD
           <img src="/src/assets/EAAF293A-696C-4EDF-A591-D739085DBD57-80723-00000DBAA73C3B18.jpg" alt="Jit" />
+=======
+          <img src={welcomeImage} alt="Jit" />
+>>>>>>> parent of 53824fd (update)
         </div>
       </div>
     </div>
