@@ -61,7 +61,7 @@ const About = () => {
             <h2 className="section-title">
                 <span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>01.</span> About Me
             </h2>
-            <div style={styles.content}>
+            <div style={styles.content} className="about-content-grid">
                 <div>
                     <p style={styles.text}>
                         Welcome to my portfolio! I'm a passionate software engineer who loves creating innovative solutions and bringing ideas to life through code.

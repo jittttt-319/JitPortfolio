@@ -40,9 +40,9 @@ const Hero = () => {
 
   return (
     <section id="hero" className="container" style={styles.section}>
-      <h1 style={styles.intro} className="fade-in">Hi, I'm Jit</h1>
-      <h2 style={styles.name} className="fade-in">Software Engineer</h2>
-      <h3 style={styles.subtitle} className="fade-in">Passionate about creating beautiful and functional web applications</h3>
+      <h1 style={styles.intro} className="slide-up delay-100">Hi, I'm Jit</h1>
+      <h2 style={styles.name} className="slide-up delay-200 color-wave">Software Engineer</h2>
+      <h3 style={styles.subtitle} className="slide-up delay-300 color-wave-orange">Passionate about creating beautiful and functional web applications</h3>
 
       <div style={{
         backgroundColor: 'rgba(100, 255, 218, 0.1)',
@@ -50,14 +50,17 @@ const Hero = () => {
         borderRadius: '4px',
         marginBottom: '2rem',
         border: '1px solid #64ffda',
-        display: 'inline-block'
-      }} className="fade-in">
+        display: 'inline-block',
+        visibility: 'visible'
+      }} className="slide-up delay-400 animate-float">
         <p style={{ color: '#64ffda', fontFamily: "'Fira Code', monospace", margin: 0 }}>
           🔍 Seeking Internship: 26 Jan 2026 - 12 Jul 2026
         </p>
       </div>
 
-      <a href="#contact" className="btn fade-in">Get In Touch</a>
+      <div className="slide-up delay-500">
+        <a href="#contact" className="btn">Get In Touch</a>
+      </div>
     </section>
   );
 };

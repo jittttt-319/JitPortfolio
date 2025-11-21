@@ -263,3 +263,808 @@ section {
     content: '...';
   }
 }
+
+/* New Creative Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  opacity: 0;
+  /* Start hidden */
+  animation-fill-mode: forwards;
+}
+
+.pop-in {
+  animation: popIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  opacity: 0;
+  /* Start hidden */
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hover-float {
+  transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+  transform: translateY(-10px);
+}
+
+/* Staggered Delays */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Ensure slide-up elements become visible after animation */
+.slide-up.delay-400 {
+  animation: slideUp 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s forwards;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+/* Interactive Skill Tags */
+.skill-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  background-color: rgba(100, 255, 218, 0.1);
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  border-radius: 4px;
+  color: #64ffda;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  transform: translateY(-5px) scale(1.05);
+  background-color: rgba(100, 255, 218, 0.2);
+  border-color: #64ffda;
+  box-shadow: 
+    0 0 10px rgba(100, 255, 218, 0.5),
+    0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Color Wave Animation - Left to Right */
+@keyframes colorWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.color-wave {
+  color: #64ffda; /* Fallback color - ensures text is visible */
+  background: linear-gradient(
+    90deg,
+    #64ffda 0%,
+    #4169e1 25%,
+    #9370db 50%,
+    #4169e1 75%,
+    #64ffda 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 7s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important; /* Ensure it's visible after slide-up animation */
+}
+
+/* Color Wave Variations - Different Color Schemes */
+.color-wave-purple {
+  color: #9370db; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #9370db 0%,
+    #ba55d3 25%,
+    #ff69b4 50%,
+    #ba55d3 75%,
+    #9370db 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 5s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+.color-wave-orange {
+  color: #ff6b6b; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #ff6b6b 0%,
+    #ffa500 25%,
+    #ffd700 50%,
+    #ffa500 75%,
+    #ff6b6b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 6s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+.color-wave-green {
+  color: #51cf66; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #51cf66 0%,
+    #40c057 25%,
+    #64ffda 50%,
+    #40c057 75%,
+    #51cf66 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 4s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+.color-wave-blue {
+  color: #4dabf7; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #4dabf7 0%,
+    #339af0 25%,
+    #228be6 50%,
+    #339af0 75%,
+    #4dabf7 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 5.5s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+.color-wave-rainbow {
+  color: #64ffda; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #ff6b6b 0%,
+    #ffa500 16.66%,
+    #ffd700 33.33%,
+    #51cf66 50%,
+    #4dabf7 66.66%,
+    #9370db 83.33%,
+    #ff6b6b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 8s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+.color-wave-cyan {
+  color: #64ffda; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #64ffda 0%,
+    #40e0d0 25%,
+    #00ced1 50%,
+    #40e0d0 75%,
+    #64ffda 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 4.5s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+.color-wave-red {
+  color: #ff6b6b; /* Fallback color */
+  background: linear-gradient(
+    90deg,
+    #ff6b6b 0%,
+    #ff5252 25%,
+    #e53935 50%,
+    #ff5252 75%,
+    #ff6b6b 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorWave 5s ease-in-out infinite;
+  display: inline-block;
+  opacity: 1 !important;
+}
+
+/* Fallback for browsers that don't support background-clip */
+@supports not (background-clip: text) {
+  .color-wave,
+  .color-wave-purple,
+  .color-wave-orange,
+  .color-wave-green,
+  .color-wave-blue,
+  .color-wave-rainbow,
+  .color-wave-cyan,
+  .color-wave-red {
+    -webkit-text-fill-color: currentColor;
+    background: none;
+  }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #64ffda, #4169e1, #9370db);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile, Tablet, Desktop
+   ============================================ */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-title::after {
+    width: 200px;
+  }
+
+  /* Grid Layouts - 2 columns on tablet */
+  [style*="grid-template-columns: repeat(auto-fill"] {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  }
+}
+
+/* Mobile and Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 60px 0;
+    scroll-margin-top: 70px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .section-title::after {
+    width: 150px;
+    margin-left: 15px;
+  }
+
+  /* Navigation - Mobile */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: block !important;
+    min-width: 44px;
+    min-height: 44px;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .mobile-nav {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .mobile-nav.mobile-nav-open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .mobile-nav.mobile-nav-closed {
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Animate menu items */
+  .mobile-nav a {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .mobile-nav.mobile-nav-open a {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .mobile-nav.mobile-nav-open a:nth-child(2) { transition-delay: 0.05s; }
+  .mobile-nav.mobile-nav-open a:nth-child(3) { transition-delay: 0.1s; }
+  .mobile-nav.mobile-nav-open a:nth-child(4) { transition-delay: 0.15s; }
+  .mobile-nav.mobile-nav-open a:nth-child(5) { transition-delay: 0.2s; }
+  .mobile-nav.mobile-nav-open a:nth-child(6) { transition-delay: 0.25s; }
+  .mobile-nav.mobile-nav-open a:nth-child(7) { transition-delay: 0.3s; }
+  .mobile-nav.mobile-nav-open a:nth-child(8) { transition-delay: 0.35s; }
+
+  /* Hamburger button animation */
+  .mobile-menu-btn {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-menu-btn:hover {
+    transform: scale(1.1);
+  }
+
+  /* Mobile menu backdrop */
+  .mobile-nav::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-nav.mobile-nav-open::before {
+    opacity: 1;
+  }
+
+  nav {
+    padding: 1rem !important;
+    position: relative;
+  }
+
+  nav > div:first-child {
+    font-size: 1.25rem !important;
+  }
+
+  /* Ensure mobile menu covers everything */
+  .mobile-nav {
+    padding-top: 4rem !important;
+  }
+
+  .mobile-nav a {
+    font-size: 1.25rem !important;
+    padding: 1rem 1.25rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Better spacing for mobile sections */
+  section {
+    padding: 3rem 0 !important;
+  }
+
+  /* Footer - Better mobile */
+  footer {
+    padding: 1.5rem 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  footer a {
+    margin: 0 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Hero Section - Better mobile sizing and styling */
+  #hero {
+    min-height: calc(100vh - 80px) !important;
+    padding-top: 100px !important;
+    padding-bottom: 2rem !important;
+    justify-content: flex-start !important;
+  }
+
+  #hero h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    margin-bottom: 0.75rem !important;
+    font-weight: 400 !important;
+  }
+
+  #hero h2 {
+    font-size: clamp(4.5rem, 16vw, 7rem) !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
+    word-break: break-word;
+  }
+
+  #hero h3 {
+    font-size: clamp(2.5rem, 9vw, 3.5rem) !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    max-width: 100% !important;
+    word-break: break-word;
+  }
+
+  /* Hero section container */
+  #hero.container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Section Titles - Better mobile */
+  .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+  }
+
+  .section-title::after {
+    display: none; /* Hide on very small screens */
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.05rem;
+    width: auto;
+    display: inline-block;
+  }
+
+  /* Internship Badge - Better mobile */
+  #hero [style*="background-color: rgba(100, 255, 218, 0.1)"] {
+    padding: 1.125rem !important;
+    margin-bottom: 2rem !important;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px !important;
+    display: block !important;
+  }
+
+  #hero [style*="background-color: rgba(100, 255, 218, 0.1)"] p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    word-break: break-word;
+  }
+
+  /* Hero button - Better mobile */
+  #hero .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 1rem 1.75rem !important;
+    font-size: 1.05rem !important;
+  }
+
+  /* Skill Tags */
+  .skill-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    margin: 0.4rem 0.4rem 0.4rem 0;
+  }
+
+  /* Grid Layouts - Responsive */
+  .hobbies-grid,
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* About Section - Stack on mobile */
+  .about-content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Education Cards - Better spacing */
+  section#education [style*="background-color: #112240"] {
+    padding: 1.5rem !important;
+  }
+
+  /* Projects Grid - Single column */
+  section#projects [style*="grid-template-columns: repeat(auto-fill"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Skills Grid - Single column */
+  section#skills [style*="grid-template-columns: repeat(auto-fill"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Color Wave Animations - Ensure they work on mobile */
+  .color-wave,
+  .color-wave-purple,
+  .color-wave-orange,
+  .color-wave-green,
+  .color-wave-blue,
+  .color-wave-rainbow,
+  .color-wave-cyan,
+  .color-wave-red {
+    font-size: inherit;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  section {
+    padding: 50px 0;
+    scroll-margin-top: 60px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title::after {
+    display: none; /* Hide on small screens */
+  }
+
+  /* Hero Section - Smaller screens */
+  #hero {
+    padding-top: 80px !important;
+    min-height: calc(100vh - 60px) !important;
+  }
+
+  #hero h1 {
+    font-size: clamp(1.4rem, 5vw, 1.75rem) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  #hero h2 {
+    font-size: clamp(4.25rem, 15vw, 6rem) !important;
+    margin-bottom: 0.875rem !important;
+  }
+
+  #hero h3 {
+    font-size: clamp(2.25rem, 9vw, 3.25rem) !important;
+    margin-bottom: 1.25rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Better spacing for small screens */
+  #hero [style*="background-color: rgba(100, 255, 218, 0.1)"] {
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #hero [style*="background-color: rgba(100, 255, 218, 0.1)"] p {
+    font-size: 0.95rem !important;
+  }
+
+  #hero .btn {
+    max-width: 100%;
+    padding: 0.875rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Text sizing - Better readability */
+  p {
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* About section text */
+  section#about p {
+    font-size: 1.1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* Image sizing - Mobile */
+  section#about img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  section#about [style*="aspect-ratio"] {
+    max-width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    width: auto;
+    text-align: center;
+    display: inline-block;
+    min-height: 44px; /* Touch-friendly size */
+    touch-action: manipulation; /* Better touch response */
+  }
+
+  /* Contact section - Better mobile */
+  section#contact {
+    padding: 3rem 0 !important;
+  }
+
+  section#contact h2 {
+    font-size: clamp(2.25rem, 9vw, 3.5rem) !important;
+  }
+
+  section#contact p {
+    font-size: 1.1rem !important;
+  }
+
+  /* Skill Tags - Smaller on mobile */
+  .skill-tag {
+    padding: 0.625rem 1rem;
+    font-size: 0.95rem;
+    margin: 0.4rem 0.4rem 0.4rem 0;
+  }
+
+  /* Education - Better mobile layout */
+  section#education h3 {
+    font-size: 1.3rem !important;
+  }
+
+  section#education h4 {
+    font-size: 1.15rem !important;
+  }
+
+  section#education [style*="color: #64ffda"] {
+    font-size: 0.95rem !important;
+  }
+
+  /* Experience - Better mobile */
+  section#experience {
+    padding: 3rem 0 !important;
+  }
+
+  /* Projects - Better mobile cards */
+  section#projects [style*="backgroundColor: #112240"] {
+    padding: 1.5rem !important;
+  }
+
+  section#projects h3 {
+    font-size: 1.3rem !important;
+  }
+
+  section#projects p {
+    font-size: 1.05rem !important;
+  }
+
+  /* Hobbies - Better mobile */
+  section#hobbies {
+    padding: 3rem 0 !important;
+  }
+
+  /* Welcome Screen */
+  .welcome-content {
+    padding: 1.5rem !important;
+    gap: 1.5rem;
+  }
+
+  .welcome-text {
+    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+  }
+
+  .welcome-name {
+    font-size: clamp(1.2rem, 3vw, 2rem) !important;
+  }
+}
+
+/* Desktop Navigation - Show desktop nav, hide mobile */
+@media (min-width: 769px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+
+  .mobile-menu-btn {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+/* Large Desktop (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  section {
+    padding: 120px 0;
+  }
+}

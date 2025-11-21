@@ -52,8 +52,8 @@ const Contact = () => {
 
     return (
         <section id="contact" className="container" style={styles.section}>
-            <p style={{ color: '#64ffda', fontFamily: "'Fira Code', monospace" }}>06. What's Next?</p>
-            <h2 style={styles.title}>Let's Connect</h2>
+            <p style={{ color: '#64ffda', fontFamily: "'Fira Code', monospace" }}>07. What's Next?</p>
+            <h2 style={styles.title} className="color-wave-rainbow">Let's Connect</h2>
             <p style={styles.text}>
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>

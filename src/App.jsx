@@ -10,10 +10,12 @@ import Hobbies from './components/Hobbies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
     <>
+      <ScrollProgress />
       <WelcomeScreen />
       <div className="animated-bg"></div>
       <Navbar />

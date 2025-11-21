@@ -117,9 +117,9 @@ const Experience = () => {
                 <div style={styles.line}></div>
 
                 {jobs.map((job, index) => (
-                    <div key={index} style={styles.jobItem}>
+                    <div key={index} style={styles.jobItem} className="slide-up delay-200">
                         <div style={styles.marker}></div>
-                        <div style={styles.card} className="hover-card">
+                        <div style={styles.card} className="hover-card hover-float">
                             <div style={styles.header}>
                                 <h3 style={styles.role}>{job.role}</h3>
                                 <div style={styles.company}>@ {job.company}</div>

@@ -84,7 +84,7 @@ const Hobbies = () => {
   return (
     <>
       <section id="hobbies" className="container">
-        <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>07.</span> Hobbies & Interests</h2>
+        <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>06.</span> Hobbies & Interests</h2>
         <div className="hobbies-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
           {hobbies.map((hobby, index) => (
             <div

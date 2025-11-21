@@ -17,7 +17,7 @@ const Skills = () => {
             gap: '2rem',
         },
         category: {
-            marginBottom: '1rem',
+            marginBottom: '2rem',
         },
         categoryTitle: {
             color: '#ccd6f6',
@@ -26,36 +26,27 @@ const Skills = () => {
             borderBottom: '1px solid #233554',
             paddingBottom: '0.5rem',
         },
-        list: {
-            listStyle: 'none',
-        },
-        item: {
-            color: '#8892b0',
-            marginBottom: '0.5rem',
-            position: 'relative',
-            paddingLeft: '20px',
-        },
-        bullet: {
-            position: 'absolute',
-            left: 0,
-            color: '#64ffda',
+        tagsContainer: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.5rem',
         }
     };
 
     return (
-        <section id="skills" className="container">
+        <section id="skills" className="container" style={{ marginTop: '4rem' }}>
             <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>05.</span> Skills & Expertise</h2>
             <div style={styles.grid}>
                 {Object.entries(skills).map(([category, items]) => (
                     <div key={category} style={styles.category}>
                         <h3 style={styles.categoryTitle}>{category}</h3>
-                        <ul style={styles.list}>
+                        <div style={styles.tagsContainer}>
                             {items.map((item, index) => (
-                                <li key={index} style={styles.item}>
-                                    <span style={styles.bullet}>▹</span> {item}
-                                </li>
+                                <span key={index} className="skill-tag">
+                                    {item}
+                                </span>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 ))}
             </div>

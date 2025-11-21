@@ -89,7 +89,7 @@ const Projects = () => {
             <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>04.</span> Projects</h2>
             <div style={styles.grid}>
                 {projects.map((project, index) => (
-                    <div key={index} style={styles.card} className="project-card">
+                    <div key={index} style={{ ...styles.card, animationDelay: `${index * 100}ms` }} className="project-card pop-in hover-float">
                         <header>
                             <div style={styles.header}>
                                 <div style={styles.folderIcon}>{project.icon}</div>
