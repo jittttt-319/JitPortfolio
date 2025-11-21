@@ -10,8 +10,11 @@ import Hobbies from './components/Hobbies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+<<<<<<< HEAD
 import ThemeSwitcher from './components/ThemeSwitcher';
 import { Analytics } from "@vercel/analytics/react"
+=======
+>>>>>>> parent of 2df9214 (analytics)
 
 function App() {
   return (
