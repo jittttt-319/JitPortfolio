@@ -17,7 +17,8 @@ function App() {
   return (
     <>
       <WelcomeScreen />
-      <div className="animated-bg"></div>
+      <div className="bg-glow bg-glow-1"></div>
+      <div className="bg-glow bg-glow-2"></div>
       <Navbar />
       <Hero />
       <About />

@@ -1,57 +1,75 @@
 import React from 'react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'AI-Based Education System',
-      description: 'Final Year Project designed for the education domain. Leverages Java Spring Boot for backend, React for frontend, and Python for extracting text.',
-      tags: ['Spring Boot', 'React', 'Python', 'AI'],
-      icon: '🤖'
+      title: 'E-Commerce Dashboard',
+      description: 'A comprehensive dashboard for managing online stores, featuring real-time analytics, inventory management, and order tracking.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+      github: '#',
+      demo: '#',
+      image: 'https://via.placeholder.com/400x250' // Replace with actual image
     },
     {
-      title: 'Coin Recognition and Counting System',
-      description: 'Trained a custom Faster R-CNN model for coin detection and counting; built an interactive Streamlit app for inference and results display.',
-      tags: ['Python', 'R-CNN', 'Streamlit', 'Machine Learning'],
-      icon: '🪙'
+      title: 'AI Content Generator',
+      description: 'An AI-powered tool that helps creators generate blog posts, social media captions, and marketing copy in seconds.',
+      tags: ['OpenAI API', 'Next.js', 'TypeScript', 'Stripe'],
+      github: '#',
+      demo: '#',
+      image: 'https://via.placeholder.com/400x250' // Replace with actual image
     },
     {
-      title: 'BananaSis',
-      description: 'Developed a Java web app using JSP/Servlets with MVC architecture for clean separation of concerns.',
-      tags: ['Java', 'JSP/Servlets', 'MVC', 'SQL'],
-      icon: '🍌'
-    },
-    {
-      title: 'Track and Field',
-      description: 'A ticketing system for a Track and Field Society, enabling event registration and ticket management using XAMPP stack.',
-      tags: ['PHP', 'HTML', 'CSS', 'XAMPP'],
-      icon: '🏃'
-    },
-    {
-      title: 'HopeWave',
-      description: 'A web/mobile social platform for anonymous bottle messaging with light gamification and chat, built with PHP on the XAMPP stack and integrated with Firebase for real-time features.',
-      tags: ['PHP', 'Firebase', 'XAMPP', 'Real-time'],
-      icon: '🌊'
+      title: 'Task Management App',
+      description: 'A collaborative task management tool with drag-and-drop boards, team chat, and file sharing capabilities.',
+      tags: ['Vue.js', 'Firebase', 'Vuex', 'Sass'],
+      github: '#',
+      demo: '#',
+      image: 'https://via.placeholder.com/400x250' // Replace with actual image
     }
   ];
 
   return (
-    <section id="projects" className="section">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <div className="projects-grid">
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Featured <span className="text-gradient">Projects</span></h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Here are some of the projects I've worked on. Each one presented unique challenges and learning opportunities.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="project-card glass"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <div className="project-icon">{project.icon}</div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="project-tags">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
-                ))}
+            <div key={index} className="glass-card group hover:border-primary/50 transition-all duration-300 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <a href={project.github} className="p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary transition-colors text-white">
+                    <FaGithub size={20} />
+                  </a>
+                  <a href={project.demo} className="p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-primary transition-colors text-white">
+                    <FaExternalLinkAlt size={18} />
+                  </a>
+                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, i) => (
+                    <span key={i} className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
