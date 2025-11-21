@@ -12,7 +12,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import ThemeSwitcher from './components/ThemeSwitcher';
+=======
+>>>>>>> parent of 724057d (update)
 import { Analytics } from "@vercel/analytics/react"
 =======
 >>>>>>> parent of 2df9214 (analytics)
@@ -36,7 +39,10 @@ function App() {
       <Contact />
       <Footer />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <ThemeSwitcher />
+=======
+>>>>>>> parent of 724057d (update)
       <Analytics />
 =======
 >>>>>>> parent of de729ef (Update App.jsx)
