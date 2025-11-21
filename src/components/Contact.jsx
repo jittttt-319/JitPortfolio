@@ -1,88 +1,40 @@
-import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import React from 'react';
 
 const Contact = () => {
-  const [showEmailModal, setShowEmailModal] = useState(false);
-  const [showNotification, setShowNotification] = useState(false);
-
-  const handleEmailClick = (e) => {
-    e.preventDefault();
-    setShowEmailModal(true);
-  };
-
-  const openEmailClient = () => {
-    window.location.href = 'mailto:jitxuan2021@gmail.com';
-    setShowEmailModal(false);
-  };
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText('jitxuan2021@gmail.com').then(() => {
-      setShowEmailModal(false);
-      setShowNotification(true);
-      setTimeout(() => setShowNotification(false), 3000);
-    });
-  };
-
   return (
-    <>
-      <section id="contact" className="section">
-        <div className="container">
-          <div className="contact-content">
-            <h2>Let's Connect</h2>
-            <p>
-              I'm always open to discussing new projects, creative ideas, or 
-              opportunities to be part of your vision.
-            </p>
-            
-            <a href="#" onClick={handleEmailClick} className="cta-button" style={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
-              <FaEnvelope style={{ marginRight: '10px' }} />
-              Send Email
-            </a>
+    <section id="contact" className="py-32 bg-black">
+      <div className="container mx-auto px-6 max-w-4xl text-center">
+        <h2 className="text-6xl md:text-8xl font-display font-bold mb-8">
+          LET'S <span className="text-accent">TALK</span>
+        </h2>
+        <p className="text-xl text-gray-400 mb-16 max-w-2xl mx-auto">
+          Got a project in mind? I'm always open to discussing new ideas and opportunities.
+        </p>
 
-            <div className="social-links">
-              <a href="https://github.com/jittttt-319" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaGithub />
-              </a>
-              <a href="https://www.linkedin.com/in/ling-jit-xuan-5051a8288" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaLinkedin />
-              </a>
-              <a href="https://www.instagram.com/jitxuannnnnn/" target="_blank" rel="noopener noreferrer" className="social-link">
-                <FaInstagram />
-              </a>
-              <a href="#" onClick={handleEmailClick} className="social-link">
-                <FaEnvelope />
-              </a>
+        <form className="space-y-8 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group">
+              <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2 group-focus-within:text-accent transition-colors">Name</label>
+              <input type="text" className="w-full bg-transparent border-b border-white/20 py-4 text-xl focus:outline-none focus:border-accent transition-colors" placeholder="John Doe" />
+            </div>
+            <div className="group">
+              <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2 group-focus-within:text-accent transition-colors">Email</label>
+              <input type="email" className="w-full bg-transparent border-b border-white/20 py-4 text-xl focus:outline-none focus:border-accent transition-colors" placeholder="john@example.com" />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Email Choice Modal */}
-      {showEmailModal && (
-        <div className="email-modal" onClick={() => setShowEmailModal(false)}>
-          <div className="email-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal" onClick={() => setShowEmailModal(false)}>×</button>
-            <h3>Contact Me</h3>
-            <p className="email-address">jitxuan2021@gmail.com</p>
-            <div className="email-options">
-              <button className="email-option-btn" onClick={openEmailClient}>
-                Open Email Client
-              </button>
-              <button className="email-option-btn" onClick={copyEmail}>
-                Copy Email Address
-              </button>
-            </div>
+          <div className="group">
+            <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2 group-focus-within:text-accent transition-colors">Message</label>
+            <textarea rows="4" className="w-full bg-transparent border-b border-white/20 py-4 text-xl focus:outline-none focus:border-accent transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
           </div>
-        </div>
-      )}
 
-      {/* Copy Notification */}
-      {showNotification && (
-        <div className="copy-notification">
-          ✓ Email copied to clipboard!
-        </div>
-      )}
-    </>
+          <div className="text-center pt-8">
+            <button type="submit" className="btn-magnetic bg-white text-black border-none hover:bg-accent">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 

@@ -1,67 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Footer = () => {
-  const [currentDateTime, setCurrentDateTime] = useState(new Date());
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentDateTime(new Date());
-    }, 1000); // Update every second
-
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > 300) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  const currentYear = currentDateTime.getFullYear();
-  const formattedDateTime = currentDateTime.toLocaleString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-
   return (
-    <>
-      <footer className="footer">
-        <div className="footer-content">
-          <p className="copyright">
-            © {currentYear} Jit (林泽瑄). All rights reserved.
-          </p>
-          <p className="footer-date">
-            {formattedDateTime}
-          </p>
+    <footer className="py-12 border-t border-white/10 bg-black">
+      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="text-2xl font-display font-bold tracking-tighter">
+          JIT<span className="text-accent">.</span>DEV
         </div>
-      </footer>
 
-      {/* Back to Top Button */}
-      {showScrollTop && (
-        <button className="scroll-to-top" onClick={scrollToTop}>
-          ↑
-        </button>
-      )}
-    </>
+        <div className="text-gray-500 text-sm">
+          © {new Date().getFullYear()} Jit Xuan. All rights reserved.
+        </div>
+
+        <div className="flex gap-6">
+          <a href="#" className="text-gray-400 hover:text-white transition-colors uppercase text-xs tracking-widest">Twitter</a>
+          <a href="#" className="text-gray-400 hover:text-white transition-colors uppercase text-xs tracking-widest">LinkedIn</a>
+          <a href="#" className="text-gray-400 hover:text-white transition-colors uppercase text-xs tracking-widest">GitHub</a>
+        </div>
+      </div>
+    </footer>
   );
 };
 

@@ -1,57 +1,63 @@
 import React from 'react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
     {
-      title: 'AI-Based Education System',
-      description: 'Final Year Project designed for the education domain. Leverages Java Spring Boot for backend, React for frontend, and Python for extracting text.',
-      tags: ['Spring Boot', 'React', 'Python', 'AI'],
-      icon: '🤖'
+      title: 'E-Commerce V2',
+      category: 'Web Application',
+      description: 'Next-gen shopping experience with 3D product views.',
+      image: 'https://via.placeholder.com/600x400'
     },
     {
-      title: 'Coin Recognition and Counting System',
-      description: 'Trained a custom Faster R-CNN model for coin detection and counting; built an interactive Streamlit app for inference and results display.',
-      tags: ['Python', 'R-CNN', 'Streamlit', 'Machine Learning'],
-      icon: '🪙'
+      title: 'AI Dashboard',
+      category: 'SaaS Platform',
+      description: 'Real-time analytics powered by machine learning.',
+      image: 'https://via.placeholder.com/600x400'
     },
     {
-      title: 'BananaSis',
-      description: 'Developed a Java web app using JSP/Servlets with MVC architecture for clean separation of concerns.',
-      tags: ['Java', 'JSP/Servlets', 'MVC', 'SQL'],
-      icon: '🍌'
-    },
-    {
-      title: 'Track and Field',
-      description: 'A ticketing system for a Track and Field Society, enabling event registration and ticket management using XAMPP stack.',
-      tags: ['PHP', 'HTML', 'CSS', 'XAMPP'],
-      icon: '🏃'
-    },
-    {
-      title: 'HopeWave',
-      description: 'A web/mobile social platform for anonymous bottle messaging with light gamification and chat, built with PHP on the XAMPP stack and integrated with Firebase for real-time features.',
-      tags: ['PHP', 'Firebase', 'XAMPP', 'Real-time'],
-      icon: '🌊'
+      title: 'Crypto Wallet',
+      category: 'Mobile App',
+      description: 'Secure and intuitive decentralized finance management.',
+      image: 'https://via.placeholder.com/600x400'
     }
   ];
 
   return (
-    <section id="projects" className="section">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
-        <div className="projects-grid">
+    <section id="projects" className="py-32 bg-surface">
+      <div className="container mx-auto px-6">
+        <div className="mb-20">
+          <h2 className="text-6xl md:text-8xl font-display font-bold mb-6 text-transparent stroke-text" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.2)' }}>
+            SELECTED <br /> <span className="text-accent" style={{ WebkitTextStroke: '0px' }}>WORKS</span>
+          </h2>
+        </div>
+
+        <div className="space-y-32">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="project-card glass"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <div className="project-icon">{project.icon}</div>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="project-tags">
-                {project.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
-                ))}
+            <div key={index} className="group relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className={`order-2 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+                <div className="overflow-hidden rounded-2xl relative">
+                  <div className="absolute inset-0 bg-accent/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                  />
+                </div>
+              </div>
+
+              <div className={`order-1 ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                <span className="text-accent font-mono text-sm tracking-widest mb-4 block">{project.category}</span>
+                <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:text-accent transition-colors duration-300">{project.title}</h3>
+                <p className="text-gray-400 text-lg mb-8 max-w-md">{project.description}</p>
+                <div className="flex gap-6">
+                  <a href="#" className="flex items-center gap-2 text-white hover:text-accent transition-colors">
+                    <FaGithub /> Code
+                  </a>
+                  <a href="#" className="flex items-center gap-2 text-white hover:text-accent transition-colors">
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                </div>
               </div>
             </div>
           ))}
