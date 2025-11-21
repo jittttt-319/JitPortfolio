@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope } from 'react-icons/fa';
-import heroImage from '../assets/DSCF1512.JPG';
+import heroImage from '../assets/DSCF1512.jpg';
 
 const Hero = () => {
   const [showEmailModal, setShowEmailModal] = useState(false);
