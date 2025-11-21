@@ -1,85 +1,90 @@
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import aboutImage from '../assets/IMG_8032.png';
-=======
->>>>>>> parent of e7ade72 (update image)
-=======
->>>>>>> parent of e7ade72 (update image)
-=======
-import aboutImage from '../assets/IMG_8032.jpeg';
->>>>>>> parent of 787bf58 (update)
-=======
->>>>>>> parent of 1a46e5f (update path)
+import aboutme1 from '../assets/aboutme1.png';
+import aboutme2 from '../assets/aboutme2.png';
 
 const About = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentParagraph, setCurrentParagraph] = useState(0);
-  
-  const paragraphs = [
-    "Welcome to my portfolio! I'm a passionate software engineer who loves creating innovative solutions and bringing ideas to life through code.",
-    "With a strong foundation in web development, I focus on building user-friendly applications that solve real-world problems. I'm constantly learning and exploring new technologies to stay ahead in this ever-evolving field.",
-    "When I'm not coding, you can find me playing badminton or volleyball, staying active and enjoying life to the fullest. I also love capturing moments through filming and listening to a mix of English and Chinese songs that inspire my creative process."
-  ];
+    const [currentImage, setCurrentImage] = useState(0);
+    const [fadeImage, setFadeImage] = useState(true);
 
-  useEffect(() => {
-    let currentText = '';
-    let paragraphIndex = 0;
-    let charIndex = 0;
+    const images = [aboutme1, aboutme2];
 
-    const typeText = () => {
-      if (paragraphIndex < paragraphs.length) {
-        if (charIndex < paragraphs[paragraphIndex].length) {
-          currentText += paragraphs[paragraphIndex][charIndex];
-          setDisplayedText(currentText);
-          setCurrentParagraph(paragraphIndex);
-          charIndex++;
-          setTimeout(typeText, 15); // Typing speed - faster now
-        } else {
-          currentText += '\n\n'; // Add spacing between paragraphs
-          paragraphIndex++;
-          charIndex = 0;
-          setTimeout(typeText, 300); // Pause between paragraphs - shorter now
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFadeImage(false); // Start fade out
+
+            setTimeout(() => {
+                setCurrentImage((prev) => (prev + 1) % images.length);
+                setFadeImage(true); // Fade in new image
+            }, 500); // Wait for fade out to complete
+        }, 10000); // Change every 10 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const styles = {
+        content: {
+            display: 'grid',
+            gridTemplateColumns: '3fr 2fr',
+            gap: '50px',
+        },
+        text: {
+            color: '#8892b0',
+            fontSize: '1.1rem',
+            marginBottom: '1rem',
+        },
+        imageContainer: {
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        imageWrapper: {
+            position: 'relative',
+            width: '100%',
+            maxWidth: '360px',
+            aspectRatio: '3 / 4',
+            overflow: 'hidden',
+            borderRadius: '12px',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
+        },
+        image: {
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'opacity 0.5s ease-in-out',
+            opacity: fadeImage ? 1 : 0,
         }
-      }
     };
 
-    typeText();
-  }, []);
-
-  return (
-    <section id="about" className="section">
-      <div className="container">
-        <h2 className="section-title">About Me</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <p className="typing-text">
-              {displayedText.split('\n\n').map((para, index) => (
-                <span key={index}>
-                  {para}
-                  {index < displayedText.split('\n\n').length - 1 && <><br /><br /></>}
-                </span>
-              ))}
-              <span className="cursor">|</span>
-            </p>
-          </div>
-          <div className="about-image">
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <img src="/src/assets/IMG_8032.jpeg" alt="About Jit" />
-=======
-            <img src={aboutImage} alt="About Jit" />
->>>>>>> parent of 787bf58 (update)
-=======
-            <img src="/src/assets/IMG_8032.png" alt="About Jit" />
->>>>>>> parent of 1a46e5f (update path)
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    return (
+        <section id="about" className="container">
+            <h2 className="section-title">
+                <span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>01.</span> About Me
+            </h2>
+            <div style={styles.content}>
+                <div>
+                    <p style={styles.text}>
+                        Welcome to my portfolio! I'm a passionate software engineer who loves creating innovative solutions and bringing ideas to life through code.
+                    </p>
+                    <p style={styles.text}>
+                        With a strong foundation in web development, I focus on building user-friendly applications that solve real-world problems. I'm constantly learning and exploring new technologies to stay ahead in this ever-evolving field.
+                    </p>
+                    <p style={styles.text}>
+                        When I'm not coding, you can find me playing badminton or volleyball, staying active and enjoying life to the fullest. I also love capturing moments through filming and listening to a mix of English and Chinese songs that inspire my creative process.
+                    </p>
+                </div>
+                <div style={styles.imageContainer}>
+                    <div style={styles.imageWrapper}>
+                        <img
+                            src={images[currentImage]}
+                            alt="About Me"
+                            style={styles.image}
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default About;

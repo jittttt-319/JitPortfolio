@@ -1,0 +1,265 @@
+:root {
+  --primary-color: #64ffda;
+  --secondary-color: #0a192f;
+  --text-color: #8892b0;
+  --heading-color: #ccd6f6;
+  --bg-color: #0a192f;
+  --card-bg: #112240;
+  --font-main: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 100px 0;
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  background-color: #233554;
+  margin-left: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #495670;
+  border: 3px solid var(--bg-color);
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Welcome screen */
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(100, 255, 218, 0.2), transparent 60%),
+    linear-gradient(135deg, #0f213d 0%, #081120 60%, #050b14 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.welcome-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.welcome-content {
+  width: min(900px, 92vw);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  border-radius: 18px;
+  background: rgba(5, 15, 30, 0.85);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  backdrop-filter: blur(40px);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+}
+
+.welcome-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.welcome-intro {
+  font-family: var(--font-mono);
+  color: var(--primary-color);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.welcome-text {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0;
+}
+
+.welcome-name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.welcome-name-chinese {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.3rem;
+}
+
+.welcome-hint {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+.welcome-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-image img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 16px;
+  border: 2px solid rgba(100, 255, 218, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.welcome-image-glow {
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.4), transparent 70%);
+  filter: blur(30px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .welcome-content {
+    padding: 2rem;
+  }
+
+  .welcome-image img {
+    max-width: 260px;
+  }
+}
+
+/* Loading dots animation */
+.loading-dots::after {
+  content: '';
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+
+  0%,
+  20% {
+    content: '';
+  }
+
+  40% {
+    content: '.';
+  }
+
+  60% {
+    content: '..';
+  }
+
+  80%,
+  100% {
+    content: '...';
+  }
+}

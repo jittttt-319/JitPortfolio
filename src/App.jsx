@@ -10,18 +10,6 @@ import Hobbies from './components/Hobbies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import ThemeSwitcher from './components/ThemeSwitcher';
-=======
->>>>>>> parent of 724057d (update)
-import { Analytics } from "@vercel/analytics/react"
-=======
->>>>>>> parent of 2df9214 (analytics)
-=======
-import { Analytics } from "@vercel/analytics/next"
->>>>>>> parent of de729ef (Update App.jsx)
 
 function App() {
   return (
@@ -31,21 +19,13 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
       <Education />
       <Experience />
       <Projects />
+      <Skills />
       <Hobbies />
       <Contact />
       <Footer />
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <ThemeSwitcher />
-=======
->>>>>>> parent of 724057d (update)
-      <Analytics />
-=======
->>>>>>> parent of de729ef (Update App.jsx)
     </>
   );
 }
