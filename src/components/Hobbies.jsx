@@ -4,6 +4,7 @@ import { FaYoutube } from 'react-icons/fa';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import filming1 from '../assets/filming/DSCF1204.png';
 import filming2 from '../assets/filming/DSCF1477.png';
 import filming3 from '../assets/filming/DSCF1534.png';
@@ -18,14 +19,19 @@ import filming5 from '../assets/filming/DSCF1914.png';
 =======
 >>>>>>> parent of e7ade72 (update image)
 =======
+=======
+>>>>>>> parent of fc168a3 (png)
 import filming1 from '../assets/filming/DSCF1204.JPG';
 import filming2 from '../assets/filming/DSCF1477.JPG';
 import filming3 from '../assets/filming/DSCF1534.JPG';
 import filming4 from '../assets/filming/DSCF1674.JPG';
 import filming5 from '../assets/filming/DSCF1837.JPG';
+<<<<<<< HEAD
 >>>>>>> parent of 787bf58 (update)
 =======
 >>>>>>> parent of 1a46e5f (update path)
+=======
+>>>>>>> parent of fc168a3 (png)
 
 const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
