@@ -10,12 +10,8 @@ import Hobbies from './components/Hobbies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-<<<<<<< HEAD
 import ThemeSwitcher from './components/ThemeSwitcher';
 import { Analytics } from "@vercel/analytics/react"
-=======
-import { Analytics } from "@vercel/analytics/next"
->>>>>>> parent of de729ef (Update App.jsx)
 
 function App() {
   return (
@@ -32,11 +28,8 @@ function App() {
       <Hobbies />
       <Contact />
       <Footer />
-<<<<<<< HEAD
       <ThemeSwitcher />
       <Analytics />
-=======
->>>>>>> parent of de729ef (Update App.jsx)
     </>
   );
 }
