@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import aboutme1 from '../assets/aboutme1.png';
 import aboutme2 from '../assets/aboutme2.png';
+import TypingAnimation from './TypingAnimation';
 
 const About = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const [fadeImage, setFadeImage] = useState(true);
 
     const images = [aboutme1, aboutme2];
+
+    const introText = `Welcome to my portfolio! I'm a passionate software engineer who loves creating innovative solutions and bringing ideas to life through code.
+
+With a strong foundation in web development, I focus on building user-friendly applications that solve real-world problems. I'm constantly learning and exploring new technologies to stay ahead in this ever-evolving field.
+
+When I'm not coding, you can find me playing badminton or volleyball, staying active and enjoying life to the fullest. I also love capturing moments through filming and listening to a mix of English and Chinese songs that inspire my creative process.`;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -63,15 +70,7 @@ const About = () => {
             </h2>
             <div style={styles.content} className="about-content-grid">
                 <div>
-                    <p style={styles.text}>
-                        Welcome to my portfolio! I'm a passionate software engineer who loves creating innovative solutions and bringing ideas to life through code.
-                    </p>
-                    <p style={styles.text}>
-                        With a strong foundation in web development, I focus on building user-friendly applications that solve real-world problems. I'm constantly learning and exploring new technologies to stay ahead in this ever-evolving field.
-                    </p>
-                    <p style={styles.text}>
-                        When I'm not coding, you can find me playing badminton or volleyball, staying active and enjoying life to the fullest. I also love capturing moments through filming and listening to a mix of English and Chinese songs that inspire my creative process.
-                    </p>
+                    <TypingAnimation text={introText} />
                 </div>
                 <div style={styles.imageContainer}>
                     <div style={styles.imageWrapper}>

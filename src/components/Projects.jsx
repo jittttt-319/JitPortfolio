@@ -87,22 +87,22 @@ const Projects = () => {
     return (
         <section id="projects" className="container">
             <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>04.</span> Projects</h2>
-            <div style={styles.grid}>
+            <div className="projects-grid">
                 {projects.map((project, index) => (
-                    <div key={index} style={{ ...styles.card, animationDelay: `${index * 100}ms` }} className="project-card pop-in hover-float">
+                    <div key={index} style={{ animationDelay: `${index * 100}ms` }} className="project-card pop-in hover-float glass-panel">
                         <header>
-                            <div style={styles.header}>
-                                <div style={styles.folderIcon}>{project.icon}</div>
+                            <div className="project-header">
+                                <div className="project-folder-icon">{project.icon}</div>
                             </div>
-                            <h3 style={styles.title}>{project.title}</h3>
-                            <div style={styles.description}>
+                            <h3 className="project-title">{project.title}</h3>
+                            <div className="project-description">
                                 <p>{project.description}</p>
                             </div>
                         </header>
                         <footer>
-                            <ul style={styles.techList}>
+                            <ul className="project-tech-list">
                                 {project.tech.map((tech, i) => (
-                                    <li key={i} style={styles.techItem}>{tech}</li>
+                                    <li key={i} className="project-tech-item">{tech}</li>
                                 ))}
                             </ul>
                         </footer>

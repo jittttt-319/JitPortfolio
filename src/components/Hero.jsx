@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import BinaryRain from './BinaryRain';
 
 const Hero = () => {
   const styles = {
@@ -10,6 +11,7 @@ const Hero = () => {
       justifyContent: 'center',
       alignItems: 'flex-start',
       paddingTop: '0',
+      position: 'relative',
     },
     intro: {
       color: '#64ffda',
@@ -39,26 +41,19 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="container" style={styles.section}>
-      <h1 style={styles.intro} className="slide-up delay-100">Hi, I'm Jit</h1>
-      <h2 style={styles.name} className="slide-up delay-200 color-wave">Software Engineer</h2>
-      <h3 style={styles.subtitle} className="slide-up delay-300 color-wave-orange">Passionate about creating beautiful and functional web applications</h3>
+    <section id="hero" className="container hero-section" style={styles.section}>
+      <BinaryRain />
+      <h1 className="hero-intro slide-up delay-100" style={{ position: 'relative', zIndex: 1 }}>Hi, I'm Jit</h1>
+      <h2 className="hero-name slide-up delay-200 color-wave" style={{ position: 'relative', zIndex: 1 }}>Software Engineer</h2>
+      <h3 className="hero-subtitle slide-up delay-300 color-wave-orange" style={{ position: 'relative', zIndex: 1 }}>Passionate about creating beautiful and functional web applications</h3>
 
-      <div style={{
-        backgroundColor: 'rgba(100, 255, 218, 0.1)',
-        padding: '1rem',
-        borderRadius: '4px',
-        marginBottom: '2rem',
-        border: '1px solid #64ffda',
-        display: 'inline-block',
-        visibility: 'visible'
-      }} className="slide-up delay-400 animate-float">
-        <p style={{ color: '#64ffda', fontFamily: "'Fira Code', monospace", margin: 0 }}>
+      <div className="hero-status-box slide-up delay-400 animate-float" style={{ position: 'relative', zIndex: 1 }}>
+        <p className="hero-status-text">
           🔍 Seeking Internship: 26 Jan 2026 - 12 Jul 2026
         </p>
       </div>
 
-      <div className="slide-up delay-500">
+      <div className="slide-up delay-500" style={{ position: 'relative', zIndex: 1 }}>
         <a href="#contact" className="btn">Get In Touch</a>
       </div>
     </section>

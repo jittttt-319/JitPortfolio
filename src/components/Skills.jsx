@@ -36,11 +36,11 @@ const Skills = () => {
     return (
         <section id="skills" className="container" style={{ marginTop: '4rem' }}>
             <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>05.</span> Skills & Expertise</h2>
-            <div style={styles.grid}>
+            <div className="skills-grid">
                 {Object.entries(skills).map(([category, items]) => (
-                    <div key={category} style={styles.category}>
-                        <h3 style={styles.categoryTitle}>{category}</h3>
-                        <div style={styles.tagsContainer}>
+                    <div key={category} className="skill-category glass-panel">
+                        <h3 className="skill-category-title">{category}</h3>
+                        <div className="skill-tags-container">
                             {items.map((item, index) => (
                                 <span key={index} className="skill-tag">
                                     {item}
