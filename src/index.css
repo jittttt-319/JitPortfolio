@@ -1561,6 +1561,16 @@ section {
     margin-top: 0.5rem;
   }
 
+  /* Terminal Footer Social Links - Mobile */
+  .footer-social-links {
+    gap: 1rem;
+  }
+
+  .social-link {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.8rem;
+  }
+
   /* Hero Section - Better mobile sizing and styling */
   #hero {
     min-height: calc(100vh - 80px) !important;
@@ -2028,7 +2038,6 @@ section {
    ============================================ */
 .terminal-footer {
   padding: 4rem 2rem 2rem;
-  background: #020c1b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2129,6 +2138,33 @@ section {
   font-size: 0.9rem;
   flex: 1;
   outline: none;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-link {
+  color: #64ffda;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Fira Code', monospace;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.social-link:hover {
+  color: #fff;
+  border-color: #64ffda;
+  background: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
 }
 
 .footer-copyright {

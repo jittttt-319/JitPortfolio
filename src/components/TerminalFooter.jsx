@@ -9,10 +9,11 @@ const TerminalFooter = () => {
     const terminalRef = useRef(null);
 
     const commands = {
-        help: 'Available commands: help, email, github, linkedin, clear, about',
+        help: 'Available commands: help, email, github, linkedin, instagram, clear, about',
         email: 'jitxuan2021@gmail.com',
         github: 'Opening GitHub...',
         linkedin: 'Opening LinkedIn...',
+        instagram: 'Opening Instagram...',
         about: 'I am a software engineer passionate about building great web apps.',
         clear: 'CLEAR_TERMINAL'
     };
@@ -28,7 +29,9 @@ const TerminalFooter = () => {
         if (cleanCmd === 'github') {
             window.open('https://github.com/jittttt-319', '_blank');
         } else if (cleanCmd === 'linkedin') {
-            window.open('https://www.linkedin.com/in/jit-xuan-chong-890050255/', '_blank');
+            window.open('https://www.linkedin.com/in/ling-jit-xuan-5051a8288', '_blank');
+        } else if (cleanCmd === 'instagram') {
+            window.open('https://www.instagram.com/jitxuannnnnn/', '_blank');
         }
 
         const response = commands[cleanCmd] || `Command not found: ${cleanCmd}. Type "help" for list.`;
@@ -84,8 +87,13 @@ const TerminalFooter = () => {
                     </form>
                 </div>
             </div>
+            <div className="footer-social-links">
+                <a href="https://github.com/jittttt-319" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/ling-jit-xuan-5051a8288" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
+                <a href="https://www.instagram.com/jitxuannnnnn/" target="_blank" rel="noopener noreferrer" className="social-link">Instagram</a>
+            </div>
             <div className="footer-copyright">
-                © 2024 Jit. All rights reserved.
+                © {new Date().getFullYear()} Jit. All rights reserved.
             </div>
         </footer>
     );
