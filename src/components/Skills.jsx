@@ -34,7 +34,7 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills" className="container" style={{ marginTop: '4rem' }}>
+        <section id="skills" className="container" style={{ marginTop: '4rem', marginBottom: '2rem' }}>
             <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>05.</span> Skills & Expertise</h2>
             <div className="skills-grid">
                 {Object.entries(skills).map(([category, items]) => (

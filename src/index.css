@@ -72,6 +72,26 @@ ul {
   box-sizing: border-box;
 }
 
+.hero-container {
+  width: 100%;
+  padding-left: 1rem !important;
+  margin-left: 5.5rem;
+  padding-top: 5rem;
+}
+
+/* Ensure all sections have consistent padding on desktop */
+@media (min-width: 1025px) {
+  section#about.container,
+  section#education.container,
+  section#experience.container,
+  section#projects.container,
+  section#skills.container,
+  section#hobbies.container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
 /* Ensure all sections have proper spacing */
 section {
   padding-left: 0;
@@ -728,6 +748,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
   padding-top: 0;
 }
 
@@ -921,7 +943,7 @@ section {
 .skill-tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .skill-tag {
@@ -1311,6 +1333,14 @@ section {
     padding: 0 1.5rem;
   }
 
+  #hero .container,
+  #hero .hero-container {
+    padding: 0 1.5rem;
+    padding-left: 1rem !important;
+    margin-left: 2rem !important;
+    padding-top: 3rem !important;
+  }
+
   section {
     padding: 80px 0;
   }
@@ -1344,6 +1374,8 @@ section {
   }
 
   /* Specific sections that need spacing */
+  section#about.container,
+  section#education.container,
   section#experience.container,
   section#hobbies.container {
     padding-left: 1.25rem !important;
@@ -1351,6 +1383,8 @@ section {
   }
 
   /* Override any inline styles that might remove padding */
+  section#about[class*="container"],
+  section#education[class*="container"],
   section#experience[class*="container"],
   section#hobbies[class*="container"] {
     padding-left: 1.25rem !important;
@@ -1574,7 +1608,7 @@ section {
   /* Hero Section - Better mobile sizing and styling */
   #hero {
     min-height: calc(100vh - 80px) !important;
-    padding-top: 100px !important;
+    padding-top: 80px !important;
     padding-bottom: 2rem !important;
     justify-content: flex-start !important;
   }
@@ -1603,9 +1637,16 @@ section {
   }
 
   /* Hero section container */
-  #hero.container {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
+  #hero .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  #hero .hero-container {
+    padding-left: 1rem !important;
+    padding-right: 2rem !important;
+    margin-left: 1rem !important;
+    padding-top: 2rem !important;
   }
 
   /* Ensure hero content doesn't stick */
@@ -1668,7 +1709,7 @@ section {
   .hobbies-grid,
   [style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 2rem !important;
   }
 
   /* About Section - Stack on mobile */
@@ -1749,6 +1790,14 @@ section {
     padding: 0 1rem;
   }
 
+  #hero .container,
+  #hero .hero-container {
+    padding: 0 1rem;
+    padding-left: 1rem !important;
+    margin-left: 0 !important;
+    padding-top: 2rem !important;
+  }
+
   /* Ensure all content has spacing on small mobile */
   section.container,
   section>.container {
@@ -1763,6 +1812,8 @@ section {
   }
 
   /* Experience and Hobbies on small mobile */
+  section#about.container,
+  section#education.container,
   section#experience.container,
   section#hobbies.container {
     padding-left: 1rem !important;
@@ -1917,12 +1968,21 @@ section {
   }
 
   /* Experience - Better mobile */
+  section#about,
+  section#education {
+    padding: 3rem 0 !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
   section#experience {
     padding: 3rem 0 !important;
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
 
+  section#about.container,
+  section#education.container,
   section#experience.container {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
@@ -1959,12 +2019,21 @@ section {
   }
 
   /* Hobbies - Better mobile */
+  section#about,
+  section#education {
+    padding: 3rem 0 !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
   section#hobbies {
     padding: 3rem 0 !important;
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
 
+  section#about.container,
+  section#education.container,
   section#hobbies.container {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
