@@ -2007,13 +2007,144 @@ section {
   }
 }
 
-/* Large Desktop (min-width: 1440px) */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1400px;
-  }
+/* ============================================
+   SPOTLIGHT CURSOR
+   ============================================ */
+.spotlight-cursor {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(100, 255, 218, 0.08) 0%, rgba(10, 25, 47, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  mix-blend-mode: screen;
+}
 
-  section {
-    padding: 120px 0;
-  }
+/* ============================================
+   TERMINAL FOOTER
+   ============================================ */
+.terminal-footer {
+  padding: 4rem 2rem 2rem;
+  background: #020c1b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.terminal-window {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(10, 25, 47, 0.9);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+}
+
+.terminal-header {
+  background: rgba(17, 34, 64, 0.8);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 1rem;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-btn.close {
+  background: #ff5f56;
+}
+
+.terminal-btn.minimize {
+  background: #ffbd2e;
+}
+
+.terminal-btn.maximize {
+  background: #27c93f;
+}
+
+.terminal-title {
+  color: #8892b0;
+  font-size: 0.85rem;
+  margin: 0 auto;
+  padding-right: 50px;
+  /* Balance the buttons width */
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  color: #e6edf3;
+  font-size: 0.9rem;
+  cursor: text;
+}
+
+.terminal-line {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.terminal-line.command {
+  color: #e6edf3;
+}
+
+.terminal-line.output {
+  color: #8892b0;
+  white-space: pre-wrap;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prompt {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #e6edf3;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  flex: 1;
+  outline: none;
+}
+
+.footer-copyright {
+  color: #8892b0;
+  font-size: 0.85rem;
+  font-family: 'Fira Code', monospace;
+}
+
+/* ============================================
+   3D TILT EFFECT
+   ============================================ */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.tilt-content {
+  transform: translateZ(20px);
 }

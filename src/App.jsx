@@ -9,12 +9,14 @@ import Experience from './components/Experience';
 import Hobbies from './components/Hobbies';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+import TerminalFooter from './components/TerminalFooter';
 import ScrollProgress from './components/ScrollProgress';
+import SpotlightCursor from './components/SpotlightCursor';
 
 function App() {
   return (
     <>
+      <SpotlightCursor />
       <ScrollProgress />
       <WelcomeScreen />
       <div className="animated-bg"></div>
@@ -27,7 +29,7 @@ function App() {
       <Skills />
       <Hobbies />
       <Contact />
-      <Footer />
+      <TerminalFooter />
     </>
   );
 }
