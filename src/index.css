@@ -1682,6 +1682,44 @@ section {
     grid-template-columns: 1fr !important;
   }
 
+  /* Git Timeline - Mobile Responsive */
+  .git-timeline {
+    padding-left: 25px !important;
+  }
+
+  .git-timeline-line {
+    left: 8px !important;
+    width: 2px !important;
+  }
+
+  .git-commit-marker {
+    left: -21px !important;
+    width: 14px !important;
+    height: 14px !important;
+    border-width: 2px !important;
+  }
+
+  .git-commit-card {
+    padding: 1.25rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .git-commit-card::before {
+    left: -8px !important;
+    border-top: 6px solid transparent !important;
+    border-bottom: 6px solid transparent !important;
+    border-right: 8px solid rgba(100, 255, 218, 0.2) !important;
+  }
+
+  .git-commit-hash {
+    font-size: 0.7rem !important;
+  }
+
+  .git-commit-message {
+    font-size: 1.2rem !important;
+  }
+
   /* Color Wave Animations - Ensure they work on mobile */
   .color-wave,
   .color-wave-purple,
