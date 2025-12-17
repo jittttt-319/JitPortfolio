@@ -50,12 +50,12 @@ const Hero = () => {
 
         <div className="hero-status-box slide-up delay-400 animate-float" style={{ position: 'relative', zIndex: 1 }}>
           <p className="hero-status-text">
-            🔍 Seeking Internship: 26 Jan 2026 - 12 Jul 2026
-          </p>
-        </div>
+          🔍 Seeking Internship: 26 Jan 2026 - 12 Jul 2026
+        </p>
+      </div>
 
         <div className="slide-up delay-500" style={{ position: 'relative', zIndex: 1 }}>
-          <a href="#contact" className="btn">Get In Touch</a>
+        <a href="#contact" className="btn">Get In Touch</a>
         </div>
       </div>
     </section>

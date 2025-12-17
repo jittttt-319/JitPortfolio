@@ -1,21 +1,37 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const TerminalFooter = () => {
+const TerminalFooter = ({ onStartGame }) => {
     const [input, setInput] = useState('');
     const [history, setHistory] = useState([
         { type: 'output', content: 'Welcome to the interactive footer terminal. Type "help" for commands.' }
     ]);
+    const [matrixMode, setMatrixMode] = useState(false);
     const inputRef = useRef(null);
     const terminalRef = useRef(null);
 
+    const jokes = [
+        "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+        "A SQL query walks into a bar, walks up to two tables and asks: 'Can I JOIN you?' 🍺",
+        "There are 10 types of people: those who understand binary and those who don't. 💻",
+        "Why do Java developers wear glasses? Because they don't C#! 👓",
+        "How many programmers does it take to change a light bulb? None, that's a hardware problem! 💡"
+    ];
+
     const commands = {
-        help: 'Available commands: help, email, github, linkedin, instagram, clear, about',
+        help: 'Available commands: help, email, github, linkedin, instagram, clear, about, joke, coffee, matrix, hack, snake, secret, party',
         email: 'jitxuan2021@gmail.com',
         github: 'Opening GitHub...',
         linkedin: 'Opening LinkedIn...',
         instagram: 'Opening Instagram...',
         about: 'I am a software engineer passionate about building great web apps.',
-        clear: 'CLEAR_TERMINAL'
+        clear: 'CLEAR_TERMINAL',
+        joke: 'RANDOM_JOKE',
+        coffee: '☕ Brewing coffee... *slurp* Ahh, that hits the spot!',
+        matrix: 'MATRIX_MODE',
+        hack: 'HACK_MODE',
+        snake: 'SNAKE_GAME',
+        secret: 'SECRET_MODE',
+        party: 'PARTY_MODE'
     };
 
     const handleCommand = (cmd) => {
@@ -26,6 +42,7 @@ const TerminalFooter = () => {
             return;
         }
 
+        // Social media links
         if (cleanCmd === 'github') {
             window.open('https://github.com/jittttt-319', '_blank');
         } else if (cleanCmd === 'linkedin') {
@@ -34,7 +51,28 @@ const TerminalFooter = () => {
             window.open('https://www.instagram.com/jitxuannnnnn/', '_blank');
         }
 
-        const response = commands[cleanCmd] || `Command not found: ${cleanCmd}. Type "help" for list.`;
+        // Fun commands
+        let response;
+        if (cleanCmd === 'joke') {
+            response = jokes[Math.floor(Math.random() * jokes.length)];
+        } else if (cleanCmd === 'matrix') {
+            response = '🟢 Entering the Matrix... Wake up, Neo...';
+            setMatrixMode(true);
+            setTimeout(() => setMatrixMode(false), 3000);
+        } else if (cleanCmd === 'hack') {
+            response = `🔐 Initializing hack sequence...\n> Connecting to mainframe...\n> Bypassing firewall...\n> Access granted! Just kidding 😄`;
+        } else if (cleanCmd === 'snake') {
+            response = '🐍 Launching Snake Game... Use arrow keys to play!';
+            if (onStartGame) {
+                setTimeout(() => onStartGame(), 500);
+            }
+        } else if (cleanCmd === 'secret' || cleanCmd === 'party') {
+            response = cleanCmd === 'secret' ? '🎮 SECRET EASTER EGG ACTIVATED! ✨' : '🎉 PARTY MODE ACTIVATED! 🎊';
+            // Trigger confetti effect by simulating Ctrl+K
+            window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }));
+        } else {
+            response = commands[cleanCmd] || `Command not found: ${cleanCmd}. Type "help" for list.`;
+        }
 
         setHistory(prev => [
             ...prev,
@@ -58,7 +96,7 @@ const TerminalFooter = () => {
 
     return (
         <footer className="terminal-footer">
-            <div className="terminal-window">
+            <div className={`terminal-window ${matrixMode ? 'matrix-mode' : ''}`}>
                 <div className="terminal-header">
                     <div className="terminal-buttons">
                         <span className="terminal-btn close"></span>
@@ -71,7 +109,9 @@ const TerminalFooter = () => {
                     {history.map((line, i) => (
                         <div key={i} className={`terminal-line ${line.type}`}>
                             {line.type === 'command' && <span className="prompt">➜ ~</span>}
-                            {line.content}
+                            {line.content.split('\n').map((text, idx) => (
+                                <div key={idx}>{text}</div>
+                            ))}
                         </div>
                     ))}
                     <form onSubmit={handleSubmit} className="terminal-input-line">

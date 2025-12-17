@@ -2253,3 +2253,579 @@ section {
 .tilt-content {
   transform: translateZ(20px);
 }
+
+/* ============================================
+   EASTER EGGS & INTERACTIVE FEATURES
+   ============================================ */
+
+/* Confetti Animation - Mobile Optimized */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confetti-fall 3s linear infinite;
+  opacity: 0.8;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Rainbow Body Animation */
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Secret Easter Egg Button - Bottom Left */
+.secret-easter-egg-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.9) 0%, rgba(100, 255, 218, 0.9) 100%);
+  border: 2px solid #64ffda;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(100, 255, 218, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.secret-easter-egg-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 30px rgba(168, 85, 247, 0.6);
+}
+
+.secret-easter-egg-btn:active {
+  transform: scale(0.95) rotate(-15deg);
+}
+
+/* Konami Code Progress Indicator - Mobile Optimized */
+.konami-progress {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  background: rgba(10, 25, 47, 0.95);
+  border: 2px solid #64ffda;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 200px;
+  max-width: calc(100vw - 40px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(100, 255, 218, 0.3);
+  animation: slideDown 0.3s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.konami-progress-text {
+  color: #64ffda;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.konami-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(100, 255, 218, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.konami-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #64ffda 0%, #a855f7 100%);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+/* Achievement Popup - Mobile Optimized */
+.achievement-popup {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 10000;
+  animation: slideInRight 0.5s ease-out, slideOutRight 0.5s ease-in 3.5s forwards;
+  max-width: calc(100vw - 40px);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+.achievement-content {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.95) 0%, rgba(100, 255, 218, 0.95) 100%);
+  border: 2px solid #64ffda;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 300px;
+  box-shadow: 0 10px 40px rgba(100, 255, 218, 0.3),
+              0 0 20px rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.achievement-title {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievement-name {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Achievement Counter - Bottom Right */
+.achievement-counter {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(10, 25, 47, 0.95);
+  border: 2px solid #64ffda;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(100, 255, 218, 0.3);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.achievement-counter:hover {
+  transform: scale(1.05);
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.achievement-count {
+  color: #64ffda;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* Snake Game Styles */
+.snake-game-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.snake-game-container {
+  background: rgba(10, 25, 47, 0.98);
+  border: 3px solid #64ffda;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(100, 255, 218, 0.3);
+}
+
+.snake-game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.snake-game-header h2 {
+  color: #64ffda;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.snake-close-btn {
+  background: transparent;
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snake-close-btn:hover {
+  background: #64ffda;
+  color: #0a192f;
+  transform: rotate(90deg);
+}
+
+.snake-game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.snake-score {
+  color: #64ffda;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+.snake-controls {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #8892b0;
+  flex-wrap: wrap;
+}
+
+.snake-control-desktop {
+  display: inline;
+}
+
+.snake-control-mobile {
+  display: none;
+}
+
+.snake-game-board {
+  background: #020c1b;
+  border: 2px solid #233554;
+  border-radius: 8px;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.snake-row {
+  display: flex;
+}
+
+.snake-cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  background: rgba(10, 25, 47, 0.5);
+  transition: all 0.1s ease;
+}
+
+.snake-cell.snake {
+  background: linear-gradient(135deg, #64ffda 0%, #22d3ee 100%);
+  border-color: #64ffda;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.snake-cell.snake-head {
+  background: linear-gradient(135deg, #a855f7 0%, #64ffda 100%);
+  border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+}
+
+.snake-cell.food {
+  background: #f97316;
+  border-color: #f97316;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.7);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.snake-game-over,
+.snake-paused {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 25, 47, 0.98);
+  border: 3px solid #64ffda;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  z-index: 10;
+  min-width: 250px;
+}
+
+.snake-game-over h3,
+.snake-paused h3 {
+  color: #64ffda;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.snake-game-over p,
+.snake-paused p {
+  color: #8892b0;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.snake-retry-btn {
+  background: #64ffda;
+  color: #0a192f;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.snake-retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(100, 255, 218, 0.4);
+}
+
+/* Matrix Mode for Terminal */
+.terminal-window.matrix-mode {
+  animation: matrixGlow 0.5s ease-in-out 3;
+}
+
+@keyframes matrixGlow {
+  0%, 100% {
+    border-color: #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+  }
+  50% {
+    border-color: #00ff00;
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.8);
+  }
+}
+
+.terminal-window.matrix-mode .terminal-body {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+/* Mobile Responsive for Interactive Features */
+@media (max-width: 768px) {
+  /* Confetti - Reduce count on mobile for performance */
+  .confetti-container {
+    pointer-events: none;
+  }
+  
+  .confetti {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* Konami Progress */
+  .konami-progress {
+    top: 15px;
+    left: 10px;
+    right: 10px;
+    transform: none;
+    min-width: auto;
+    padding: 0.75rem 1rem;
+  }
+
+  .konami-progress-text {
+    font-size: 0.9rem;
+  }
+
+  /* Achievement Popup */
+  .achievement-popup {
+    right: 10px;
+    left: 10px;
+    top: 80px;
+    max-width: none;
+  }
+
+  .achievement-content {
+    min-width: auto;
+    padding: 1rem;
+  }
+
+  .achievement-title {
+    font-size: 0.85rem;
+  }
+
+  .achievement-name {
+    font-size: 1.1rem;
+  }
+
+  .achievement-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Snake Game */
+  .snake-game-container {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+
+  .snake-game-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .snake-cell {
+    width: 15px;
+    height: 15px;
+  }
+
+  .snake-controls {
+    font-size: 0.75rem;
+  }
+
+  .snake-game-board {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .confetti {
+    width: 6px;
+    height: 6px;
+  }
+
+  .konami-progress {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .konami-progress-text {
+    font-size: 0.8rem;
+  }
+
+  .achievement-content {
+    padding: 0.75rem;
+  }
+
+  .achievement-name {
+    font-size: 1rem;
+  }
+
+  .snake-game-container {
+    padding: 0.75rem;
+  }
+
+  .snake-cell {
+    width: 12px;
+    height: 12px;
+  }
+
+  .snake-game-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .snake-control-desktop {
+    display: none;
+  }
+
+  .snake-control-mobile {
+    display: inline;
+  }
+}
+
+/* Prevent pull-to-refresh on mobile during easter egg interactions */
+body.easter-egg-active {
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+
+/* Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .achievement-popup {
+    right: 20px;
+  }
+
+  .konami-progress {
+    min-width: 250px;
+  }
+}

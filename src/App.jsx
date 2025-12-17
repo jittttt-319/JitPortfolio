@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,12 +12,32 @@ import Contact from './components/Contact';
 import TerminalFooter from './components/TerminalFooter';
 import ScrollProgress from './components/ScrollProgress';
 import SpotlightCursor from './components/SpotlightCursor';
+import EasterEggs from './components/EasterEggs';
+import SnakeGame from './components/SnakeGame';
 
 function App() {
+  const [showSnakeGame, setShowSnakeGame] = useState(false);
+
+  useEffect(() => {
+    // Prevent browser from restoring scroll position
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    
+    // Always start at the top of the page
+    window.scrollTo(0, 0);
+    
+    // Clear any hash from URL that might cause auto-scroll
+    if (window.location.hash) {
+      window.history.replaceState(null, null, window.location.pathname);
+    }
+  }, []);
+
   return (
     <>
       <SpotlightCursor />
       <ScrollProgress />
+      <EasterEggs />
       <WelcomeScreen />
       <div className="animated-bg"></div>
       <Navbar />
@@ -29,7 +49,8 @@ function App() {
       <Skills />
       <Hobbies />
       <Contact />
-      <TerminalFooter />
+      <TerminalFooter onStartGame={() => setShowSnakeGame(true)} />
+      {showSnakeGame && <SnakeGame onClose={() => setShowSnakeGame(false)} />}
     </>
   );
 }
