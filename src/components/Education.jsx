@@ -8,7 +8,7 @@ const Education = () => {
             school: 'Tunku Abdul Rahman University of Management and Technology',
             location: 'Kuala Lumpur, Malaysia',
             duration: 'July 2024 - July 2026',
-            cgpa: '3.90',
+            cgpa: '3.92',
         },
         {
             name: 'Diploma in Information Technology',
