@@ -66,7 +66,7 @@ When I'm not coding, you can find me playing badminton or volleyball, staying ac
     return (
         <section id="about" className="container">
             <h2 className="section-title">
-                <span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>01.</span> About Me
+                <span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>01.</span> About Me
             </h2>
             <div style={styles.content} className="about-content-grid">
                 <div>

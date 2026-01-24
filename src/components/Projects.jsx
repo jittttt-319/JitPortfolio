@@ -58,7 +58,7 @@ const Projects = () => {
             marginBottom: '1.5rem',
         },
         folderIcon: {
-            color: '#64ffda',
+            color: '#9467FB',
             fontSize: '40px',
         },
         title: {
@@ -78,7 +78,7 @@ const Projects = () => {
             marginTop: 'auto',
         },
         techItem: {
-            color: '#64ffda',
+            color: '#9467FB',
             fontFamily: "'Fira Code', monospace",
             fontSize: '0.8rem',
         }
@@ -86,7 +86,7 @@ const Projects = () => {
 
     return (
         <section id="projects" className="container">
-            <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>04.</span> Projects</h2>
+            <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>04.</span> Projects</h2>
             <div className="projects-grid">
                 {projects.map((project, index) => (
                     <div key={index} style={{ animationDelay: `${index * 100}ms` }} className="project-card pop-in hover-float glass-panel">

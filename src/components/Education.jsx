@@ -50,7 +50,7 @@ const Education = () => {
             marginBottom: '0.5rem',
         },
         meta: {
-            color: '#64ffda',
+            color: '#9467FB',
             fontFamily: "'Fira Code', monospace",
             fontSize: '0.9rem',
             display: 'flex',
@@ -61,7 +61,7 @@ const Education = () => {
 
     return (
         <section id="education" className="container">
-            <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>02.</span> Education</h2>
+            <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>02.</span> Education</h2>
             <div>
                 {schools.map((item, index) => (
                     <div key={index} style={styles.card}>

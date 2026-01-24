@@ -146,7 +146,7 @@ const EasterEggs = () => {
             style={{
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
-              backgroundColor: ['#64ffda', '#a855f7', '#f97316', '#22d3ee', '#84cc16'][Math.floor(Math.random() * 5)],
+              backgroundColor: ['#9467FB', '#a855f7', '#f97316', '#22d3ee', '#84cc16'][Math.floor(Math.random() * 5)],
             }}
           />
         ))}

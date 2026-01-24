@@ -39,7 +39,7 @@ const Navbar = () => {
                     display: 'none',
                     background: 'none',
                     border: 'none',
-                    color: '#64ffda',
+                    color: '#9467FB',
                     fontSize: '1.5rem',
                     cursor: 'pointer',
                     zIndex: 1001,

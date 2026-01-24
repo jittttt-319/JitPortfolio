@@ -84,7 +84,7 @@ const Hobbies = () => {
   return (
     <>
       <section id="hobbies" className="container" style={{ marginTop: '2rem' }}>
-        <h2 className="section-title"><span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>06.</span> Hobbies & Interests</h2>
+        <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>06.</span> Hobbies & Interests</h2>
         <div className="hobbies-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
           {hobbies.map((hobby, index) => (
             <div
@@ -109,7 +109,7 @@ const Hobbies = () => {
                   />
                 </div>
               ) : (
-                <div className="hobby-icon" style={{ fontSize: '3rem', marginBottom: '1rem', color: '#64ffda' }}>{hobby.icon}</div>
+                <div className="hobby-icon" style={{ fontSize: '3rem', marginBottom: '1rem', color: '#9467FB' }}>{hobby.icon}</div>
               )}
               <h3 style={{ color: '#ccd6f6', marginBottom: '0.5rem' }}>{hobby.title}</h3>
               <p style={{ color: '#8892b0' }}>{hobby.description}</p>
@@ -138,9 +138,9 @@ const Hobbies = () => {
               position: 'absolute',
               top: '10px',
               right: '10px',
-              background: 'rgba(100, 255, 218, 0.1)',
-              border: '1px solid #64ffda',
-              color: '#64ffda',
+              background: 'rgba(148, 103, 251, 0.1)',
+              border: '1px solid #9467FB',
+              color: '#9467FB',
               fontSize: '2rem',
               cursor: 'pointer',
               width: '50px',

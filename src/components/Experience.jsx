@@ -3,9 +3,18 @@ import React from 'react';
 const Experience = () => {
     const jobs = [
         {
+            company: 'Sitecore Malaysia Sdn. Bhd.',
+            role: 'Associate Software Engineer - Internship',
+            location: 'Kuala Lumpur, Malaysia',
+            duration: 'January 2026 - Present',
+            description: '',
+            hash: 'b8e4d3f',
+            points: []
+        },
+        {
             company: 'TCIT Solutions Sdn. Bhd.',
-            role: 'IT Technician Internship',
-            location: 'Malaysia',
+            role: 'IT Technician - Internship',
+            location: 'Petaling Jaya, Malaysia',
             duration: 'November 2023 - January 2024',
             description: 'Provided comprehensive technical support and system maintenance services',
             hash: 'a7f3c2e',
@@ -32,7 +41,7 @@ const Experience = () => {
             marginBottom: '0.5rem',
         },
         company: {
-            color: '#64ffda',
+            color: '#9467FB',
             fontSize: '1.1rem',
             fontFamily: "'Fira Code', monospace",
         },
@@ -66,14 +75,14 @@ const Experience = () => {
         bullet: {
             position: 'absolute',
             left: 0,
-            color: '#64ffda',
+            color: '#9467FB',
         }
     };
 
     return (
         <section id="experience" className="container" style={styles.section}>
             <h2 className="section-title">
-                <span style={{ color: '#64ffda', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>03.</span>
+                <span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>03.</span>
                 Working Journey
             </h2>
 

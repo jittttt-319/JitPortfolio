@@ -26,7 +26,7 @@ const BinaryRain = () => {
             ctx.fillStyle = 'rgba(10, 25, 47, 0.05)'; // Fade effect
             ctx.fillRect(0, 0, width, height);
 
-            ctx.fillStyle = '#64ffda'; // Green text
+            ctx.fillStyle = '#9467FB'; // Primary color text
             ctx.font = `${fontSize}px monospace`;
 
             for (let i = 0; i < drops.length; i++) {

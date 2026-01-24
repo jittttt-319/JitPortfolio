@@ -14,7 +14,7 @@ const Hero = () => {
       position: 'relative',
     },
     intro: {
-      color: '#64ffda',
+      color: '#9467FB',
       fontFamily: "'Fira Code', monospace",
       fontSize: '1rem',
       marginBottom: '1.5rem',
@@ -48,11 +48,7 @@ const Hero = () => {
         <h2 className="hero-name slide-up delay-200 color-wave" style={{ position: 'relative', zIndex: 1 }}>Software Engineer</h2>
         <h3 className="hero-subtitle slide-up delay-300 color-wave-orange" style={{ position: 'relative', zIndex: 1 }}>Passionate about creating beautiful and functional web applications</h3>
 
-        <div className="hero-status-box slide-up delay-400 animate-float" style={{ position: 'relative', zIndex: 1 }}>
-          <p className="hero-status-text">
-          🔍 Seeking Internship: 26 Jan 2026 - 12 Jul 2026
-        </p>
-      </div>
+        
 
         <div className="slide-up delay-500" style={{ position: 'relative', zIndex: 1 }}>
         <a href="#contact" className="btn">Get In Touch</a>
