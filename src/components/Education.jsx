@@ -1,23 +1,19 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import schoolLogo from '../assets/schoollogo.png';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 
 const Education = () => {
-    const schools = [
-        {
-            name: 'Bachelor of Software Engineering (Honours)',
-            school: 'Tunku Abdul Rahman University of Management and Technology',
-            location: 'Kuala Lumpur, Malaysia',
-            duration: 'July 2024 - July 2026',
-            cgpa: '3.92',
-        },
-        {
-            name: 'Diploma in Information Technology',
-            school: 'Tunku Abdul Rahman University of Management and Technology',
-            location: 'Kuala Lumpur, Malaysia',
-            duration: 'June 2022 - June 2024',
-            cgpa: '3.88',
-        }
-    ];
+    const { lang } = useLang();
+    const t = translations[lang].education;
+
+    const cgpaValues = ['3.92', '3.88'];
+    const schools = t.schools.map((s, i) => ({
+        ...s,
+        school: 'Tunku Abdul Rahman University of Management and Technology',
+        cgpa: cgpaValues[i],
+    }));
 
     const styles = {
         card: {
@@ -60,11 +56,25 @@ const Education = () => {
     };
 
     return (
-        <section id="education" className="container">
-            <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>02.</span> Education</h2>
+        <motion.section
+            id="education"
+            className="container"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
+            <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>02.</span> {t.sectionTitle}</h2>
             <div>
                 {schools.map((item, index) => (
-                    <div key={index} style={styles.card}>
+                    <motion.div
+                        key={index}
+                        style={styles.card}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.15 }}
+                    >
                         <div style={styles.header}>
                             <img src={schoolLogo} alt="School Logo" style={styles.logo} />
                             <h3 style={styles.degreeName}>{item.name}</h3>
@@ -73,12 +83,12 @@ const Education = () => {
                         <div style={styles.meta}>
                             <span>{item.location}</span>
                             <span>{item.duration}</span>
-                            <span>CGPA: {item.cgpa}</span>
+                            <span>{t.cgpa}: {item.cgpa}</span>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </section>
+        </motion.section>
     );
 };
 

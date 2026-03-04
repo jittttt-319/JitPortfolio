@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 import WelcomeScreen from './components/WelcomeScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -34,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <LanguageProvider>
       <SpotlightCursor />
       <ScrollProgress />
       <EasterEggs />
@@ -51,7 +52,7 @@ function App() {
       <Contact />
       <TerminalFooter onStartGame={() => setShowSnakeGame(true)} />
       {showSnakeGame && <SnakeGame onClose={() => setShowSnakeGame(false)} />}
-    </>
+    </LanguageProvider>
   );
 }
 

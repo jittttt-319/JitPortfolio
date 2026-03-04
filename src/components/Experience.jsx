@@ -1,29 +1,20 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 
 const Experience = () => {
-    const jobs = [
-        {
-            company: 'Sitecore Malaysia Sdn. Bhd.',
-            role: 'Associate Software Engineer - Internship',
-            location: 'Kuala Lumpur, Malaysia',
-            duration: 'January 2026 - Present',
-            description: '',
-            hash: 'b8e4d3f',
-            points: []
-        },
-        {
-            company: 'TCIT Solutions Sdn. Bhd.',
-            role: 'IT Technician - Internship',
-            location: 'Petaling Jaya, Malaysia',
-            duration: 'November 2023 - January 2024',
-            description: 'Provided comprehensive technical support and system maintenance services',
-            hash: 'a7f3c2e',
-            points: [
-                'Provided technical support to clients by troubleshooting and resolving hardware and software issues',
-                'Performed system maintenance including PC formatting, operating system reinstallation, and software setup',
-            ]
-        }
-    ];
+    const { lang } = useLang();
+    const t = translations[lang].experience;
+
+    const companies = ['Sitecore Malaysia Sdn. Bhd.', 'TCIT Solutions Sdn. Bhd.'];
+    const hashes = ['b8e4d3f', 'a7f3c2e'];
+
+    const jobs = t.jobs.map((job, i) => ({
+        ...job,
+        company: companies[i],
+        hash: hashes[i],
+    }));
 
     const styles = {
         section: {
@@ -80,17 +71,32 @@ const Experience = () => {
     };
 
     return (
-        <section id="experience" className="container" style={styles.section}>
+        <motion.section
+            id="experience"
+            className="container"
+            style={styles.section}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
             <h2 className="section-title">
                 <span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>03.</span>
-                Working Journey
+                {t.sectionTitle}
             </h2>
 
             <div className="git-timeline">
                 <div className="git-timeline-line"></div>
 
                 {jobs.map((job, index) => (
-                    <div key={index} className="git-commit slide-up delay-200">
+                    <motion.div
+                        key={index}
+                        className="git-commit"
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.2 }}
+                    >
                         <div className="git-commit-marker"></div>
                         <div className="git-commit-card hover-float">
                             <div className="git-commit-hash">commit {job.hash}</div>
@@ -113,10 +119,10 @@ const Experience = () => {
                                 ))}
                             </ul>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </section>
+        </motion.section>
     );
 };
 

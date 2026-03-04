@@ -138,6 +138,50 @@ section {
   background-color: rgba(148, 103, 251, 0.1);
 }
 
+.btn-outline {
+  background-color: transparent;
+  color: var(--heading-color);
+  border-color: var(--heading-color);
+}
+
+.btn-outline:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: rgba(148, 103, 251, 0.1);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(148, 103, 251, 0.4);
+  transition: var(--transition);
+}
+
+.theme-switcher:hover {
+  transform: scale(1.15) rotate(30deg);
+  box-shadow: 0 8px 30px rgba(148, 103, 251, 0.7);
+}
+
+.theme-color-preview {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;

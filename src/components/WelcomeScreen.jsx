@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import welcomeImage from '../assets/welcome.png';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 
 const WelcomeScreen = () => {
   const [show, setShow] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  const { lang } = useLang();
+  const t = translations[lang].welcome;
 
   const handleSkip = () => {
     setFadeOut(true);
@@ -40,12 +44,12 @@ const WelcomeScreen = () => {
       <div className="welcome-content glass">
         <div className="welcome-text-container">
           <p className="welcome-intro">
-            Portfolio loading<span className="loading-dots"></span>
+            {t.loading}<span className="loading-dots"></span>
           </p>
-          <h1 className="welcome-text">Welcome</h1>
+          <h1 className="welcome-text">{t.welcome}</h1>
           <h2 className="welcome-name">Jit Xuan</h2>
           <h2 className="welcome-name-chinese">林泽瑄</h2>
-          <p className="welcome-hint">Tap anywhere to enter</p>
+          <p className="welcome-hint">{t.hint}</p>
         </div>
 
         <div className="welcome-image">

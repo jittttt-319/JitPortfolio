@@ -1,8 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import BinaryRain from './BinaryRain';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 
 const Hero = () => {
+  const { lang } = useLang();
+  const t = translations[lang].hero;
+
   const styles = {
     section: {
       minHeight: '100vh',
@@ -44,14 +49,12 @@ const Hero = () => {
     <section id="hero" className="hero-section" style={styles.section}>
       <BinaryRain />
       <div className="container hero-container">
-        <h1 className="hero-intro slide-up delay-100" style={{ position: 'relative', zIndex: 1 }}>Hi, I'm Jit</h1>
-        <h2 className="hero-name slide-up delay-200 color-wave" style={{ position: 'relative', zIndex: 1 }}>Software Engineer</h2>
-        <h3 className="hero-subtitle slide-up delay-300 color-wave-orange" style={{ position: 'relative', zIndex: 1 }}>Passionate about creating beautiful and functional web applications</h3>
+        <h1 className="hero-intro slide-up delay-100" style={{ position: 'relative', zIndex: 1 }}>{t.greeting}</h1>
+        <h2 className="hero-name slide-up delay-200 color-wave" style={{ position: 'relative', zIndex: 1 }}>{t.title}</h2>
+        <h3 className="hero-subtitle slide-up delay-300 color-wave-orange" style={{ position: 'relative', zIndex: 1 }}>{t.subtitle}</h3>
 
-        
-
-        <div className="slide-up delay-500" style={{ position: 'relative', zIndex: 1 }}>
-        <a href="#contact" className="btn">Get In Touch</a>
+        <div className="slide-up delay-500" style={{ position: 'relative', zIndex: 1, display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <a href="#contact" className="btn">{t.cta1}</a>
         </div>
       </div>
     </section>

@@ -1,13 +1,40 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { FaReact, FaHtml5, FaCss3Alt, FaJava, FaPython, FaPhp, FaAws, FaGithub } from 'react-icons/fa';
+import { SiJavascript, SiJquery, SiSpringboot, SiMysql, SiFirebase, SiFigma, SiMicrosoft, SiTensorflow } from 'react-icons/si';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
+
+const skillIcons = {
+    'React': <FaReact />,
+    'HTML': <FaHtml5 />,
+    'CSS': <FaCss3Alt />,
+    'JavaScript': <SiJavascript />,
+    'jQuery': <SiJquery />,
+    'Java (JSP/Servlets)': <FaJava />,
+    'Spring Boot': <SiSpringboot />,
+    'PHP': <FaPhp />,
+    'Python': <FaPython />,
+    'SQL (MySQL)': <SiMysql />,
+    'Firebase': <SiFirebase />,
+    'AWS': <FaAws />,
+    'GitHub': <FaGithub />,
+    'Figma': <SiFigma />,
+    'Microsoft 365': <SiMicrosoft />,
+    'AI/ML models': <SiTensorflow />,
+};
 
 const Skills = () => {
+    const { lang } = useLang();
+    const t = translations[lang].skills;
+
     const skills = {
         "Frontend Development": ['React', 'HTML', 'CSS', 'JavaScript', 'jQuery'],
         "Backend Development": ['Java (JSP/Servlets)', 'Spring Boot', 'PHP', 'Python', 'C'],
         "Database Management": ['SQL (MySQL)', 'Firebase'],
         "Cloud & Tools": ['AWS', 'GitHub', 'Figma', 'Microsoft 365'],
         "Machine Learning": ['Python', 'AI/ML models', 'Computer Vision'],
-        "Languages": ['English', 'Malay', 'Mandarin', 'Cantonese']
+        "Languages": ['English', 'Malay', 'Mandarin', 'Cantonese'],
     };
 
     const styles = {
@@ -34,23 +61,48 @@ const Skills = () => {
     };
 
     return (
-        <section id="skills" className="container" style={{ marginTop: '4rem', marginBottom: '2rem' }}>
-            <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>05.</span> Skills & Expertise</h2>
+        <motion.section
+            id="skills"
+            className="container"
+            style={{ marginTop: '4rem', marginBottom: '2rem' }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
+            <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>05.</span> {t.sectionTitle}</h2>
             <div className="skills-grid">
-                {Object.entries(skills).map(([category, items]) => (
-                    <div key={category} className="skill-category glass-panel">
-                        <h3 className="skill-category-title">{category}</h3>
+                {Object.entries(skills).map(([category, items], catIndex) => (
+                    <motion.div
+                        key={category}
+                        className="skill-category glass-panel"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: catIndex * 0.1 }}
+                    >
+                        <h3 className="skill-category-title">{t.categories[category] || category}</h3>
                         <div className="skill-tags-container">
-                            {items.map((item, index) => (
-                                <span key={index} className="skill-tag">
-                                    {item}
-                                </span>
-                            ))}
+                            {items.map((item, index) => {
+                                const displayName = category === 'Languages'
+                                    ? (t.langItems[item] || item)
+                                    : item;
+                                return (
+                                    <span key={index} className="skill-tag">
+                                        {skillIcons[item] && (
+                                            <span style={{ marginRight: '5px', verticalAlign: 'middle', fontSize: '0.85em' }}>
+                                                {skillIcons[item]}
+                                            </span>
+                                        )}
+                                        {displayName}
+                                    </span>
+                                );
+                            })}
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </section>
+        </motion.section>
     );
 };
 

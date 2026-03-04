@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const TypingAnimation = ({ text }) => {
+const TypingAnimation = ({ text, lang }) => {
     const [displayedCode, setDisplayedCode] = useState('');
     const [isTypingComplete, setIsTypingComplete] = useState(false);
     const [showOutput, setShowOutput] = useState(false);
@@ -8,12 +8,20 @@ const TypingAnimation = ({ text }) => {
 
     const codeTemplate = `System.out.print("${text}")`;
 
+    // Reset animation when language changes
+    useEffect(() => {
+        setDisplayedCode('');
+        setIsTypingComplete(false);
+        setShowOutput(false);
+        setCurrentIndex(0);
+    }, [lang]);
+
     useEffect(() => {
         if (currentIndex < codeTemplate.length) {
             const timeout = setTimeout(() => {
                 setDisplayedCode(codeTemplate.slice(0, currentIndex + 1));
                 setCurrentIndex(currentIndex + 1);
-            }, 50); // Typing speed: 50ms per character
+            }, 50);
 
             return () => clearTimeout(timeout);
         } else {

@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 
 const Contact = () => {
     const [showNotification, setShowNotification] = useState(false);
     const [isFlying, setIsFlying] = useState(false);
+    const { lang } = useLang();
+    const t = translations[lang].contact;
 
     const handleEmailClick = (e) => {
         e.preventDefault();
@@ -18,15 +23,21 @@ const Contact = () => {
         }, 800);
 
         setTimeout(() => setShowNotification(false), 3800);
+    
     };
 
     return (
-        <section id="contact" className="container contact-section">
-            <p style={{ color: '#9467FB', fontFamily: "'Fira Code', monospace" }}>07. What's Next?</p>
-            <h2 className="contact-title color-wave-rainbow">Let's Connect</h2>
-            <p className="contact-text">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-            </p>
+        <motion.section
+            id="contact"
+            className="container contact-section"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
+            <p style={{ color: '#9467FB', fontFamily: "'Fira Code', monospace" }}>{t.next}</p>
+            <h2 className="contact-title color-wave-rainbow">{t.title}</h2>
+            <p className="contact-text">{t.text}</p>
 
             <div className="contact-btn-container">
                 <a
@@ -34,7 +45,7 @@ const Contact = () => {
                     className="btn"
                     onClick={handleEmailClick}
                 >
-                    Send Email
+                    {t.sendEmail}
                     <span className={`paper-plane-icon ${isFlying ? 'fly-away' : ''}`}>
                         ✈️
                     </span>
@@ -43,10 +54,10 @@ const Contact = () => {
 
             {showNotification && (
                 <div className="notification-toast">
-                    Email copied to clipboard!
+                    {t.copied}
                 </div>
             )}
-        </section>
+        </motion.section>
     );
 };
 

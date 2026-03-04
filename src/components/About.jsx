@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import aboutme1 from '../assets/aboutme1.png';
 import aboutme2 from '../assets/aboutme2.png';
 import TypingAnimation from './TypingAnimation';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 
 const About = () => {
     const [currentImage, setCurrentImage] = useState(0);
     const [fadeImage, setFadeImage] = useState(true);
+    const { lang } = useLang();
+    const t = translations[lang].about;
 
     const images = [aboutme1, aboutme2];
-
-    const introText = `Welcome to my portfolio! I'm a passionate software engineer who loves creating innovative solutions and bringing ideas to life through code.
-
-With a strong foundation in web development, I focus on building user-friendly applications that solve real-world problems. I'm constantly learning and exploring new technologies to stay ahead in this ever-evolving field.
-
-When I'm not coding, you can find me playing badminton or volleyball, staying active and enjoying life to the fullest. I also love capturing moments through filming and listening to a mix of English and Chinese songs that inspire my creative process.`;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -64,13 +63,21 @@ When I'm not coding, you can find me playing badminton or volleyball, staying ac
     };
 
     return (
-        <section id="about" className="container">
+        <motion.section
+            id="about"
+            className="container"
+            style={{ marginTop: '4rem' }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+        >
             <h2 className="section-title">
-                <span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>01.</span> About Me
+                <span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>01.</span> {t.sectionTitle}
             </h2>
             <div style={styles.content} className="about-content-grid">
                 <div>
-                    <TypingAnimation text={introText} />
+                    <TypingAnimation text={t.intro} lang={lang} />
                 </div>
                 <div style={styles.imageContainer}>
                     <div style={styles.imageWrapper}>
@@ -82,7 +89,7 @@ When I'm not coding, you can find me playing badminton or volleyball, staying ac
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { FaYoutube } from 'react-icons/fa';
+import { useLang } from '../context/LanguageContext';
+import translations from '../translations';
 import filming1 from '../assets/filming/DSCF1893.png';
 import filming2 from '../assets/filming/DSCF1901.png';
 import filming3 from '../assets/filming/DSCF1904.png';
@@ -12,6 +15,8 @@ const Hobbies = () => {
   const [showGallery, setShowGallery] = useState(false);
   const [randomFilmingImage, setRandomFilmingImage] = useState('');
   const [fadeImage, setFadeImage] = useState(true);
+  const { lang } = useLang();
+  const t = translations[lang].hobbies;
 
   const filmingImages = [
     filming1,
@@ -42,36 +47,16 @@ const Hobbies = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const hobbies = [
-    {
-      icon: '🏸',
-      title: 'Badminton',
-      description: 'Love playing badminton and improving my skills on the court',
-      image: null,
-      clickable: false
-    },
-    {
-      icon: '🏐',
-      title: 'Volleyball',
-      description: 'Enjoy the team spirit and competitive nature of volleyball',
-      image: null,
-      clickable: false
-    },
-    {
-      icon: '🎬',
-      title: 'Filming',
-      description: 'Passionate about capturing moments and creating visual stories',
-      image: randomFilmingImage,
-      clickable: true
-    },
-    {
-      icon: <FaYoutube />,
-      title: 'Listening to Music',
-      description: 'Enjoy listening to English and Chinese songs across various genres',
-      image: null,
-      clickable: false
-    }
-  ];
+  const hobbyIcons = ['🏸', '🏐', '🎬', <FaYoutube />];
+  const hobbyClickable = [false, false, true, false];
+  const hobbyImages = [null, null, randomFilmingImage, null];
+
+  const hobbies = t.items.map((item, i) => ({
+    ...item,
+    icon: hobbyIcons[i],
+    image: hobbyImages[i],
+    clickable: hobbyClickable[i],
+  }));
 
   const handleFilmingClick = () => {
     setShowGallery(true);
@@ -83,11 +68,19 @@ const Hobbies = () => {
 
   return (
     <>
-      <section id="hobbies" className="container" style={{ marginTop: '2rem' }}>
-        <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>06.</span> Hobbies & Interests</h2>
+      <motion.section
+        id="hobbies"
+        className="container"
+        style={{ marginTop: '2rem' }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="section-title"><span style={{ color: '#9467FB', marginRight: '10px', fontFamily: "'Fira Code', monospace" }}>06.</span> {t.sectionTitle}</h2>
         <div className="hobbies-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
           {hobbies.map((hobby, index) => (
-            <div
+            <motion.div
               key={index}
               className={`hobby-card ${hobby.clickable ? 'clickable' : ''}`}
               style={{
@@ -98,6 +91,10 @@ const Hobbies = () => {
                 textAlign: 'center'
               }}
               onClick={hobby.clickable ? handleFilmingClick : undefined}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               {hobby.image ? (
                 <div className="hobby-image" style={{ marginBottom: '1rem', height: '150px', overflow: 'hidden', borderRadius: '4px' }}>
@@ -113,10 +110,10 @@ const Hobbies = () => {
               )}
               <h3 style={{ color: '#ccd6f6', marginBottom: '0.5rem' }}>{hobby.title}</h3>
               <p style={{ color: '#8892b0' }}>{hobby.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Filming Gallery Modal */}
       {showGallery && (
