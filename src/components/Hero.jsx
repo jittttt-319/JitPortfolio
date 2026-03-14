@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaPaperPlane } from 'react-icons/fa';
 import BinaryRain from './BinaryRain';
 import { useLang } from '../context/LanguageContext';
 import translations from '../translations';
@@ -54,7 +55,23 @@ const Hero = () => {
         <h3 className="hero-subtitle slide-up delay-300 color-wave-orange" style={{ position: 'relative', zIndex: 1 }}>{t.subtitle}</h3>
 
         <div className="slide-up delay-500" style={{ position: 'relative', zIndex: 1, display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <a href="#contact" className="btn">{t.cta1}</a>
+          <motion.a
+            href="#contact"
+            className="contact-cta-btn"
+            whileHover="hover"
+            whileTap={{ scale: 0.96 }}
+          >
+            <span className="contact-cta-shimmer" />
+            <span className="contact-cta-label">{t.cta1}</span>
+            <motion.span
+              className="contact-cta-icon"
+              variants={{
+                hover: { x: 5, y: -5, rotate: 15, transition: { type: 'spring', stiffness: 400, damping: 15 } },
+              }}
+            >
+              <FaPaperPlane />
+            </motion.span>
+          </motion.a>
         </div>
       </div>
     </section>

@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+const isTouchDevice = () =>
+    typeof window !== 'undefined' &&
+    (navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches);
+
 const SpotlightCursor = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isPointer, setIsPointer] = useState(false);
+
+    if (isTouchDevice()) return null;
 
     useEffect(() => {
         const handleMouseMove = (e) => {

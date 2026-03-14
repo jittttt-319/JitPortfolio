@@ -116,15 +116,23 @@ const Experience = () => {
                                 </div>
                             </div>
 
-                            <p style={styles.description}>{job.description}</p>
+                            {job.description ? (
+                                <p style={styles.description}>{job.description}</p>
+                            ) : null}
 
-                            <ul style={styles.list}>
-                                {jobs[index].points.map((point, i) => (
-                                    <li key={i} style={styles.listItem}>
-                                        <span style={styles.bullet}>▹</span> {point}
-                                    </li>
-                                ))}
-                            </ul>
+                            {jobs[index].points.length > 0 ? (
+                                <ul style={styles.list}>
+                                    {jobs[index].points.map((point, i) => (
+                                        <li key={i} style={styles.listItem}>
+                                            <span style={styles.bullet}>▹</span> {point}
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p style={{ ...styles.description, opacity: 0.45, fontStyle: 'italic', fontFamily: "'Fira Code', monospace", fontSize: '0.9rem' }}>
+                                    // details coming soon...
+                                </p>
+                            )}
                         </div>
                     </motion.div>
                 ))}

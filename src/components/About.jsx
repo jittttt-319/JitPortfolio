@@ -88,22 +88,47 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                 >
-                    <div
-                        style={styles.imageWrapper}
-                        onMouseEnter={e => {
-                            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(148,103,251,0.5), 0 20px 50px rgba(148,103,251,0.25)';
-                            e.currentTarget.style.borderColor = 'rgba(148,103,251,0.5)';
-                        }}
-                        onMouseLeave={e => {
-                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-                            e.currentTarget.style.borderColor = 'rgba(148,103,251,0.25)';
-                        }}
-                    >
-                        <img
-                            src={images[currentImage]}
-                            alt="About Me"
-                            style={styles.image}
-                        />
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', width: '100%', maxWidth: '360px' }}>
+                        <div
+                            style={styles.imageWrapper}
+                            onMouseEnter={e => {
+                                e.currentTarget.style.boxShadow = '0 0 0 2px rgba(148,103,251,0.5), 0 20px 50px rgba(148,103,251,0.25)';
+                                e.currentTarget.style.borderColor = 'rgba(148,103,251,0.5)';
+                            }}
+                            onMouseLeave={e => {
+                                e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+                                e.currentTarget.style.borderColor = 'rgba(148,103,251,0.25)';
+                            }}
+                        >
+                            <img
+                                src={images[currentImage]}
+                                alt="About Me"
+                                style={styles.image}
+                            />
+                        </div>
+                        {/* Image indicator dots */}
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                            {images.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => {
+                                        setFadeImage(false);
+                                        setTimeout(() => { setCurrentImage(i); setFadeImage(true); }, 300);
+                                    }}
+                                    style={{
+                                        width: i === currentImage ? '22px' : '8px',
+                                        height: '8px',
+                                        borderRadius: '4px',
+                                        border: 'none',
+                                        background: i === currentImage ? '#9467FB' : 'rgba(148,103,251,0.3)',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.35s ease',
+                                        padding: 0,
+                                    }}
+                                    aria-label={`Photo ${i + 1}`}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             </div>

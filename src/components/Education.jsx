@@ -38,6 +38,48 @@ const CountUp = ({ target, duration = 1200 }) => {
     return <span ref={ref}>{value.toFixed(2)}</span>;
 };
 
+const CgpaBar = ({ value, max = 4.0, label }) => {
+    const percentage = (value / max) * 100;
+    const barRef = useRef();
+    const [width, setWidth] = useState(0);
+    const started = useRef(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !started.current) {
+                    started.current = true;
+                    setTimeout(() => setWidth(percentage), 200);
+                }
+            },
+            { threshold: 0.5 }
+        );
+        if (barRef.current) observer.observe(barRef.current);
+        return () => observer.disconnect();
+    }, [percentage]);
+
+    return (
+        <div ref={barRef} style={{ marginTop: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontFamily: "'Fira Code', monospace", fontSize: '0.85rem' }}>
+                <span style={{ color: '#8892b0' }}>{label}</span>
+                <span style={{ color: '#9467FB', fontWeight: '600' }}>
+                    <CountUp target={value.toFixed(2)} /> / {max.toFixed(1)}
+                </span>
+            </div>
+            <div style={{ background: 'rgba(148,103,251,0.1)', borderRadius: '20px', height: '6px', overflow: 'hidden', border: '1px solid rgba(148,103,251,0.15)' }}>
+                <div style={{
+                    height: '100%',
+                    width: `${width}%`,
+                    background: 'linear-gradient(90deg, #9467FB, #4169e1)',
+                    borderRadius: '20px',
+                    transition: 'width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    boxShadow: '0 0 10px rgba(148,103,251,0.5)',
+                }} />
+            </div>
+        </div>
+    );
+};
+
 const Education = () => {
     const { lang } = useLang();
     const t = translations[lang].education;
@@ -104,10 +146,12 @@ const Education = () => {
                     <motion.div
                         key={index}
                         style={styles.card}
+                        className="education-card glass-panel"
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.15 }}
+                        whileHover={{ y: -6, boxShadow: '0 0 0 1px rgba(148,103,251,0.3), 0 12px 35px rgba(148,103,251,0.2)' }}
                     >
                         <div style={styles.header}>
                             <img src={schoolLogo} alt="School Logo" style={styles.logo} />
@@ -117,8 +161,8 @@ const Education = () => {
                         <div style={styles.meta}>
                             <span>{item.location}</span>
                             <span>{item.duration}</span>
-                            <span>{t.cgpa}: <CountUp target={item.cgpa} /></span>
                         </div>
+                        <CgpaBar value={parseFloat(item.cgpa)} max={4.0} label={t.cgpa} />
                     </motion.div>
                 ))}
             </div>

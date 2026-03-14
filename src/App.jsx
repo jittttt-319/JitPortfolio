@@ -12,6 +12,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import TerminalFooter from './components/TerminalFooter';
 import ScrollProgress from './components/ScrollProgress';
+import ScrollToTop from './components/ScrollToTop';
 import SpotlightCursor from './components/SpotlightCursor';
 import EasterEggs from './components/EasterEggs';
 import SnakeGame from './components/SnakeGame';
@@ -38,6 +39,7 @@ function App() {
     <LanguageProvider>
       <SpotlightCursor />
       <ScrollProgress />
+      <ScrollToTop />
       <EasterEggs />
       <WelcomeScreen />
       <div className="animated-bg"></div>

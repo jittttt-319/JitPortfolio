@@ -48,7 +48,8 @@ const Hobbies = () => {
   }, []);
 
   const hobbyIcons = ['🏸', '🏐', '🎬', <FaYoutube />];
-  const hobbyClickable = [false, false, true, false];
+  const hobbyClickable = [false, false, true, true];
+  const hobbyLinks = [null, null, null, 'https://www.youtube.com'];
   const hobbyImages = [null, null, randomFilmingImage, null];
 
   const hobbies = t.items.map((item, i) => ({
@@ -56,10 +57,19 @@ const Hobbies = () => {
     icon: hobbyIcons[i],
     image: hobbyImages[i],
     clickable: hobbyClickable[i],
+    link: hobbyLinks[i],
   }));
 
   const handleFilmingClick = () => {
     setShowGallery(true);
+  };
+
+  const handleHobbyClick = (hobby) => {
+    if (hobby.link) {
+      window.open(hobby.link, '_blank', 'noopener,noreferrer');
+    } else if (hobby.clickable) {
+      handleFilmingClick();
+    }
   };
 
   const closeGallery = () => {
@@ -91,7 +101,7 @@ const Hobbies = () => {
                 textAlign: 'center',
                 border: '1px solid transparent',
               }}
-              onClick={hobby.clickable ? handleFilmingClick : undefined}
+              onClick={hobby.clickable ? () => handleHobbyClick(hobby) : undefined}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{

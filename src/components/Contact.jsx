@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaInstagram, FaPaperPlane } from 'react-icons/fa';
 import { useLang } from '../context/LanguageContext';
 import translations from '../translations';
+
+const socials = [
+    { icon: <FaGithub />, label: 'GitHub', href: 'https://github.com/jittttt-319' },
+    { icon: <FaLinkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/ling-jit-xuan-5051a8288' },
+    { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/jitxuannnnnn/' },
+];
 
 const Contact = () => {
     const [showNotification, setShowNotification] = useState(false);
@@ -39,24 +46,45 @@ const Contact = () => {
             <h2 className="contact-title color-wave-rainbow">{t.title}</h2>
             <p className="contact-text">{t.text}</p>
 
-            <div className="contact-btn-container">
-                <a
-                    href="mailto:jitxuan2021@gmail.com"
-                    className="btn"
-                    onClick={handleEmailClick}
+            <motion.a
+                href="mailto:jitxuan2021@gmail.com"
+                className="contact-cta-btn"
+                onClick={handleEmailClick}
+                whileHover="hover"
+                whileTap={{ scale: 0.96 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+            >
+                <span className="contact-cta-shimmer" />
+                <span className="contact-cta-label">{t.sendEmail}</span>
+                <motion.span
+                    className="contact-cta-icon"
+                    variants={{
+                        hover: { x: 5, y: -5, rotate: 15, transition: { type: 'spring', stiffness: 400, damping: 15 } },
+                    }}
+                    animate={isFlying ? { x: 80, y: -80, opacity: 0, rotate: 45, transition: { duration: 0.5, ease: 'easeIn' } } : {}}
                 >
-                    {t.sendEmail}
-                    <span className={`paper-plane-icon ${isFlying ? 'fly-away' : ''}`}>
-                        ✈️
-                    </span>
-                </a>
-            </div>
+                    <FaPaperPlane />
+                </motion.span>
+            </motion.a>
 
-            {showNotification && (
-                <div className="notification-toast">
-                    {t.copied}
-                </div>
-            )}
+           
+
+            <AnimatePresence>
+                {showNotification && (
+                    <motion.div
+                        className="notification-toast"
+                        initial={{ x: 120, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 120, opacity: 0 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                    >
+                        ✓ {t.copied}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.section>
     );
 };
