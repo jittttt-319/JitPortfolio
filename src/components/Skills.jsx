@@ -24,6 +24,25 @@ const skillIcons = {
     'AI/ML models': <SiTensorflow />,
 };
 
+const tagContainer = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.06,
+        },
+    },
+};
+
+const tagItem = {
+    hidden: { opacity: 0, scale: 0.75, y: 12 },
+    show: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: { type: 'spring', stiffness: 280, damping: 18 },
+    },
+};
+
 const Skills = () => {
     const { lang } = useLang();
     const t = translations[lang].skills;
@@ -82,23 +101,29 @@ const Skills = () => {
                         transition={{ duration: 0.4, delay: catIndex * 0.1 }}
                     >
                         <h3 className="skill-category-title">{t.categories[category] || category}</h3>
-                        <div className="skill-tags-container">
+                        <motion.div
+                            className="skill-tags-container"
+                            variants={tagContainer}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                        >
                             {items.map((item, index) => {
                                 const displayName = category === 'Languages'
                                     ? (t.langItems[item] || item)
                                     : item;
                                 return (
-                                    <span key={index} className="skill-tag">
+                                    <motion.span key={index} className="skill-tag" variants={tagItem}>
                                         {skillIcons[item] && (
                                             <span style={{ marginRight: '5px', verticalAlign: 'middle', fontSize: '0.85em' }}>
                                                 {skillIcons[item]}
                                             </span>
                                         )}
                                         {displayName}
-                                    </span>
+                                    </motion.span>
                                 );
                             })}
-                        </div>
+                        </motion.div>
                     </motion.div>
                 ))}
             </div>

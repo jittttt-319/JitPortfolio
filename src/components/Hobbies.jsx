@@ -88,11 +88,18 @@ const Hobbies = () => {
                 padding: '2rem',
                 borderRadius: '4px',
                 cursor: hobby.clickable ? 'pointer' : 'default',
-                textAlign: 'center'
+                textAlign: 'center',
+                border: '1px solid transparent',
               }}
               onClick={hobby.clickable ? handleFilmingClick : undefined}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                y: -8,
+                borderColor: 'rgba(148, 103, 251, 0.35)',
+                boxShadow: '0 0 0 1px rgba(148, 103, 251, 0.25), 0 12px 30px rgba(148, 103, 251, 0.2)',
+                transition: { duration: 0.25 },
+              }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >

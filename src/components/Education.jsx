@@ -1,8 +1,42 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import schoolLogo from '../assets/schoollogo.png';
 import { useLang } from '../context/LanguageContext';
 import translations from '../translations';
+
+const CountUp = ({ target, duration = 1200 }) => {
+    const [value, setValue] = useState(0);
+    const ref = useRef();
+    const started = useRef(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !started.current) {
+                    started.current = true;
+                    const targetNum = parseFloat(target);
+                    const totalFrames = Math.round(duration / 16);
+                    let frame = 0;
+                    const timer = setInterval(() => {
+                        frame++;
+                        const progress = frame / totalFrames;
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        setValue(eased * targetNum);
+                        if (frame >= totalFrames) {
+                            setValue(targetNum);
+                            clearInterval(timer);
+                        }
+                    }, 16);
+                }
+            },
+            { threshold: 0.6 }
+        );
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [target, duration]);
+
+    return <span ref={ref}>{value.toFixed(2)}</span>;
+};
 
 const Education = () => {
     const { lang } = useLang();
@@ -83,7 +117,7 @@ const Education = () => {
                         <div style={styles.meta}>
                             <span>{item.location}</span>
                             <span>{item.duration}</span>
-                            <span>{t.cgpa}: {item.cgpa}</span>
+                            <span>{t.cgpa}: <CountUp target={item.cgpa} /></span>
                         </div>
                     </motion.div>
                 ))}

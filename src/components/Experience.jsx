@@ -86,7 +86,14 @@ const Experience = () => {
             </h2>
 
             <div className="git-timeline">
-                <div className="git-timeline-line"></div>
+                <motion.div
+                    className="git-timeline-line"
+                    initial={{ scaleY: 0, originY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
+                    style={{ transformOrigin: 'top' }}
+                />
 
                 {jobs.map((job, index) => (
                     <motion.div

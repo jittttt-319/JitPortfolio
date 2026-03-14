@@ -52,6 +52,8 @@ const About = () => {
             overflow: 'hidden',
             borderRadius: '12px',
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
+            border: '1px solid rgba(148, 103, 251, 0.25)',
+            transition: 'box-shadow 0.4s ease, border-color 0.4s ease',
         },
         image: {
             width: '100%',
@@ -79,15 +81,31 @@ const About = () => {
                 <div>
                     <TypingAnimation text={t.intro} lang={lang} />
                 </div>
-                <div style={styles.imageContainer}>
-                    <div style={styles.imageWrapper}>
+                <motion.div
+                    style={styles.imageContainer}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                    <div
+                        style={styles.imageWrapper}
+                        onMouseEnter={e => {
+                            e.currentTarget.style.boxShadow = '0 0 0 2px rgba(148,103,251,0.5), 0 20px 50px rgba(148,103,251,0.25)';
+                            e.currentTarget.style.borderColor = 'rgba(148,103,251,0.5)';
+                        }}
+                        onMouseLeave={e => {
+                            e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+                            e.currentTarget.style.borderColor = 'rgba(148,103,251,0.25)';
+                        }}
+                    >
                         <img
                             src={images[currentImage]}
                             alt="About Me"
                             style={styles.image}
                         />
                     </div>
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     );
