@@ -18,7 +18,7 @@ const Footer = () => {
     return (
         <footer style={styles.footer}>
             <div style={{ marginBottom: '10px' }}>
-                <a href="https://www.linkedin.com/in/ling-jit-xuan-5051a8288" target="_blank" rel="noopener noreferrer" style={styles.link}>Linkedin</a>
+                <a href="https://www.linkedin.com/in/jit-xuan-ling-5051a8288" target="_blank" rel="noopener noreferrer" style={styles.link}>Linkedin</a>
                 <a href="https://github.com/jittttt-319" target="_blank" rel="noopener noreferrer" style={styles.link}>GitHub</a>
                 <a href="https://www.instagram.com/jitxuannnnnn/" target="_blank" rel="noopener noreferrer" style={styles.link}>Instagram</a>
             </div>
