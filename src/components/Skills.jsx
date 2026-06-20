@@ -49,8 +49,8 @@ const Skills = () => {
 
     const skills = {
         "Frontend Development": ['React', 'HTML', 'CSS', 'JavaScript', 'jQuery'],
-        "Backend Development": ['Java (JSP/Servlets)', 'Spring Boot', 'PHP', 'Python', 'C'],
-        "Database Management": ['SQL (MySQL)', 'Firebase'],
+        "Backend Development": ['Java (JSP/Servlets)', 'Spring Boot', 'PHP', 'Python', 'C', 'C# (ASP .NET)'],
+        "Database Management": ['SQL (MySQL)', 'Firebase', 'SQL Server'],
         "Cloud & Tools": ['AWS', 'GitHub', 'Figma', 'Microsoft 365'],
         "Machine Learning": ['Python', 'AI/ML models', 'Computer Vision'],
         "Languages": ['English', 'Malay', 'Mandarin', 'Cantonese'],
