@@ -6,7 +6,7 @@ import translations from '../translations';
 
 const socials = [
     { icon: <FaGithub />, label: 'GitHub', href: 'https://github.com/jittttt-319' },
-    { icon: <FaLinkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/ling-jit-xuan-5051a8288' },
+    { icon: <FaLinkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jit-xuan-ling-5051a8288' },
     { icon: <FaInstagram />, label: 'Instagram', href: 'https://www.instagram.com/jitxuannnnnn/' },
 ];
 
