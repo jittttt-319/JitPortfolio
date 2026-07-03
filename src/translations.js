@@ -183,7 +183,7 @@ const translations = {
                 {
                     role: '软件工程师实习生',
                     location: '马来西亚，吉隆坡',
-                    duration: '2026年1月 - 至今',
+                    duration: '2026年1月 - 2026年7月',
                      description: '软件支援、技术问题调查与开发',
         points: [
             '通过调查、故障排除及问题修复，为客户提供软件产品技术支援。',
