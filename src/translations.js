@@ -47,9 +47,21 @@ const translations = {
                 {
                     role: 'Associate Software Engineer - Internship',
                     location: 'Kuala Lumpur, Malaysia',
-                    duration: 'January 2026 - Present',
-                    description: '',
-                    points: [],
+                    duration: 'January 2026 - July 2026',
+                    description: 'Software Support, Technical Investigation & Development',
+                    points: [
+                        'Provided product support by investigating, troubleshooting, and resolving software-related issues.',
+'Managed and resolved Level 1 (L1) and Level 2 (L2) technical support cases while adhering to Service Level Agreements (SLAs) to ensure timely issue resolution and customer satisfaction.',
+'Collaborated with cross-functional teams to analyze and resolve complex technical issues, ensuring effective communication and knowledge sharing.',
+'Developed and maintained scripts, tools, and utilities to automate repetitive tasks, streamline workflows, and improve overall efficiency.',
+'Implemented and customized algorithms and business logic solutions to address customer-specific requirements and improve application functionality.',
+'Analyzed customer-reported problems and identified root causes through systematic debugging and issue investigation.',
+'Collaborated closely with certified Sitecore developers and cross-functional teams to diagnose, escalate, and resolve complex technical issues.',
+'Utilized Docker containers to deploy, reproduce, and troubleshoot customer environments for efficient issue investigation and testing.',
+'Documented findings, solutions, and troubleshooting procedures to improve support efficiency and knowledge sharing.',
+'Assisted in maintaining product quality by reproducing, validating, and tracking reported defects.',
+'Participated in code reviews, solution discussions, and technical investigations to support product improvements and customer success.'
+                    ],
                 },
                 {
                     role: 'IT Technician - Internship',
@@ -172,8 +184,20 @@ const translations = {
                     role: '软件工程师实习生',
                     location: '马来西亚，吉隆坡',
                     duration: '2026年1月 - 至今',
-                    description: '',
-                    points: [],
+                     description: '软件支援、技术问题调查与开发',
+        points: [
+            '通过调查、故障排除及问题修复，为客户提供软件产品技术支援。',
+            '负责处理一级（L1）及二级（L2）技术支援案例，并遵守服务水平协议（SLA），确保问题能够及时解决并提升客户满意度。',
+            '与跨职能团队合作，分析并解决复杂技术问题，确保沟通顺畅及知识共享。',
+            '开发及维护脚本、工具和实用程序，以自动化重复性任务、优化工作流程并提高整体效率。',
+            '根据客户需求实现及定制算法与业务逻辑解决方案，以提升系统功能和应用表现。',
+            '通过系统化调试和问题调查，分析客户反馈的问题并找出根本原因。',
+            '与认证 Sitecore 开发工程师及跨职能团队紧密合作，诊断、升级及解决复杂技术问题。',
+            '利用 Docker 容器部署、重现及排查客户环境中的问题，以提升问题调查和测试效率。',
+            '记录调查结果、解决方案及故障排除流程，以提高支援效率并促进知识共享。',
+            '通过重现、验证及追踪缺陷，协助维护产品质量。',
+            '参与代码审查、解决方案讨论及技术调查工作，以支持产品优化及客户成功。'
+        ],
                 },
                 {
                     role: 'IT 技术员实习生',
