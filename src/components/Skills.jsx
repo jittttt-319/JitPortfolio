@@ -51,33 +51,12 @@ const Skills = () => {
         "Frontend Development": ['React', 'HTML', 'CSS', 'JavaScript', 'jQuery'],
         "Backend Development": ['Java (JSP/Servlets)', 'Spring Boot', 'PHP', 'Python', 'C', 'C# (ASP .NET)'],
         "Database Management": ['SQL (MySQL)', 'Firebase', 'SQL Server'],
-        "Cloud & Tools": ['AWS', 'GitHub', 'Figma', 'Microsoft 365', 'Sitecore XP', 'Jira','ILspy'],
+        "Cloud & Tools": ['AWS', 'GitHub', 'Figma', 'Microsoft 365', 'Sitecore XP', 'Jira', 'ILspy'],
         "Machine Learning": ['Python', 'AI/ML models', 'Computer Vision'],
         "Languages": ['English', 'Malay', 'Mandarin', 'Cantonese'],
     };
 
-    const styles = {
-        grid: {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-            gap: '2rem',
-        },
-        category: {
-            marginBottom: '2rem',
-        },
-        categoryTitle: {
-            color: '#ccd6f6',
-            fontSize: '1.2rem',
-            marginBottom: '1rem',
-            borderBottom: '1px solid #233554',
-            paddingBottom: '0.5rem',
-        },
-        tagsContainer: {
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.5rem',
-        }
-    };
+
 
     return (
         <motion.section

@@ -23,54 +23,7 @@ const Projects = () => {
         tech: projectTech[i],
     }));
 
-    const styles = {
-        grid: {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-            gap: '1.5rem',
-        },
-        card: {
-            backgroundColor: '#112240',
-            padding: '2rem',
-            borderRadius: '4px',
-            transition: 'transform 0.2s ease',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-        },
-        header: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '1.5rem',
-        },
-        folderIcon: {
-            color: '#9467FB',
-            fontSize: '40px',
-        },
-        title: {
-            color: '#ccd6f6',
-            fontSize: '1.4rem',
-            marginBottom: '1rem',
-        },
-        description: {
-            color: '#8892b0',
-            fontSize: '1rem',
-            marginBottom: '1.5rem',
-        },
-        techList: {
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '10px',
-            marginTop: 'auto',
-        },
-        techItem: {
-            color: '#9467FB',
-            fontFamily: "'Fira Code', monospace",
-            fontSize: '0.8rem',
-        }
-    };
+
 
     return (
         <motion.section

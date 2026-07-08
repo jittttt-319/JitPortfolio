@@ -49,6 +49,7 @@ const Hero = () => {
   return (
     <section id="hero" className="hero-section" style={styles.section}>
       <BinaryRain />
+      <div className="hero-ambient-orb" />
       <div className="container hero-container">
         <h1 className="hero-intro slide-up delay-100" style={{ position: 'relative', zIndex: 1 }}>{t.greeting}</h1>
         <h2 className="hero-name slide-up delay-200 color-wave" style={{ position: 'relative', zIndex: 1 }}>{t.title}</h2>

@@ -30,7 +30,7 @@ const Contact = () => {
         }, 800);
 
         setTimeout(() => setShowNotification(false), 3800);
-    
+
     };
 
     return (
@@ -42,9 +42,10 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
         >
-            <p style={{ color: '#9467FB', fontFamily: "'Fira Code', monospace" }}>{t.next}</p>
-            <h2 className="contact-title color-wave-rainbow">{t.title}</h2>
-            <p className="contact-text">{t.text}</p>
+            <div className="contact-ambient-orb" />
+            <p style={{ color: '#9467FB', fontFamily: 'var(--font-mono)', position: 'relative', zIndex: 1 }}>{t.next}</p>
+            <h2 className="contact-title color-wave-rainbow" style={{ position: 'relative', zIndex: 1 }}>{t.title}</h2>
+            <p className="contact-text" style={{ position: 'relative', zIndex: 1 }}>{t.text}</p>
 
             <motion.a
                 href="mailto:jitxuan2021@gmail.com"
@@ -70,7 +71,7 @@ const Contact = () => {
                 </motion.span>
             </motion.a>
 
-           
+
 
             <AnimatePresence>
                 {showNotification && (

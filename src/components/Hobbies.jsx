@@ -92,29 +92,19 @@ const Hobbies = () => {
           {hobbies.map((hobby, index) => (
             <motion.div
               key={index}
-              className={`hobby-card ${hobby.clickable ? 'clickable' : ''}`}
+              className={`hobby-card glass-panel hover-float ${hobby.clickable ? 'clickable' : ''}`}
               style={{
-                backgroundColor: '#112240',
-                padding: '2rem',
-                borderRadius: '4px',
                 cursor: hobby.clickable ? 'pointer' : 'default',
                 textAlign: 'center',
-                border: '1px solid transparent',
               }}
               onClick={hobby.clickable ? () => handleHobbyClick(hobby) : undefined}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{
-                y: -8,
-                borderColor: 'rgba(148, 103, 251, 0.35)',
-                boxShadow: '0 0 0 1px rgba(148, 103, 251, 0.25), 0 12px 30px rgba(148, 103, 251, 0.2)',
-                transition: { duration: 0.25 },
-              }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               {hobby.image ? (
-                <div className="hobby-image" style={{ marginBottom: '1rem', height: '150px', overflow: 'hidden', borderRadius: '4px' }}>
+                <div className="hobby-image" style={{ marginBottom: '1rem', height: '150px', overflow: 'hidden', borderRadius: '8px', border: '1px solid rgba(148, 103, 251, 0.2)' }}>
                   <img
                     src={hobby.image}
                     alt={hobby.title}
@@ -140,26 +130,30 @@ const Hobbies = () => {
           display: 'flex', justifyContent: 'center', alignItems: 'center',
           backdropFilter: 'blur(10px)'
         }}>
-          <div className="gallery-content" onClick={(e) => e.stopPropagation()} style={{
+          <div className="gallery-content glass-panel" onClick={(e) => e.stopPropagation()} style={{
             maxWidth: '1200px',
             width: '90%',
             maxHeight: '90vh',
             overflowY: 'auto',
             padding: '40px',
-            position: 'relative'
+            position: 'relative',
+            borderRadius: '16px',
+            background: 'rgba(10, 25, 47, 0.9)',
+            border: '1px solid rgba(148, 103, 251, 0.2)',
+            boxShadow: '0 20px 80px rgba(0, 0, 0, 0.6)'
           }}>
             <button className="close-gallery" onClick={closeGallery} style={{
               position: 'absolute',
-              top: '10px',
-              right: '10px',
+              top: '20px',
+              right: '20px',
               background: 'rgba(148, 103, 251, 0.1)',
-              border: '1px solid #9467FB',
+              border: '1px solid rgba(148, 103, 251, 0.3)',
               color: '#9467FB',
-              fontSize: '2rem',
+              fontSize: '1.5rem',
               cursor: 'pointer',
-              width: '50px',
-              height: '50px',
-              borderRadius: '4px',
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

@@ -60,20 +60,20 @@ const CgpaBar = ({ value, max = 4.0, label }) => {
 
     return (
         <div ref={barRef} style={{ marginTop: '1rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontFamily: "'Fira Code', monospace", fontSize: '0.85rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontFamily: 'var(--font-mono)', fontSize: '0.85rem' }}>
                 <span style={{ color: '#8892b0' }}>{label}</span>
                 <span style={{ color: '#9467FB', fontWeight: '600' }}>
                     <CountUp target={value.toFixed(2)} /> / {max.toFixed(1)}
                 </span>
             </div>
-            <div style={{ background: 'rgba(148,103,251,0.1)', borderRadius: '20px', height: '6px', overflow: 'hidden', border: '1px solid rgba(148,103,251,0.15)' }}>
+            <div style={{ background: 'rgba(148,103,251,0.08)', borderRadius: '20px', height: '4px', overflow: 'hidden', border: '1px solid rgba(148,103,251,0.1)' }}>
                 <div style={{
                     height: '100%',
                     width: `${width}%`,
                     background: 'linear-gradient(90deg, #9467FB, #4169e1)',
                     borderRadius: '20px',
                     transition: 'width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                    boxShadow: '0 0 10px rgba(148,103,251,0.5)',
+                    boxShadow: '0 0 12px rgba(148,103,251,0.4)',
                 }} />
             </div>
         </div>
@@ -93,11 +93,10 @@ const Education = () => {
 
     const styles = {
         card: {
-            backgroundColor: '#112240',
             padding: '2rem',
-            borderRadius: '4px',
+            borderRadius: '12px',
             marginBottom: '1.5rem',
-            transition: 'transform 0.2s ease',
+            transition: 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
         },
         header: {
             display: 'flex',
@@ -151,7 +150,6 @@ const Education = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.15 }}
-                        whileHover={{ y: -6, boxShadow: '0 0 0 1px rgba(148,103,251,0.3), 0 12px 35px rgba(148,103,251,0.2)' }}
                     >
                         <div style={styles.header}>
                             <img src={schoolLogo} alt="School Logo" style={styles.logo} />

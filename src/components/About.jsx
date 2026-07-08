@@ -53,7 +53,7 @@ const About = () => {
             borderRadius: '12px',
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
             border: '1px solid rgba(148, 103, 251, 0.25)',
-            transition: 'box-shadow 0.4s ease, border-color 0.4s ease',
+            transition: 'transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease, border-color 0.5s ease',
         },
         image: {
             width: '100%',
@@ -92,10 +92,12 @@ const About = () => {
                         <div
                             style={styles.imageWrapper}
                             onMouseEnter={e => {
-                                e.currentTarget.style.boxShadow = '0 0 0 2px rgba(148,103,251,0.5), 0 20px 50px rgba(148,103,251,0.25)';
+                                e.currentTarget.style.transform = 'scale(1.02) translateY(-4px)';
+                                e.currentTarget.style.boxShadow = '0 0 30px rgba(148,103,251,0.25), 0 20px 50px rgba(0,0,0,0.6)';
                                 e.currentTarget.style.borderColor = 'rgba(148,103,251,0.5)';
                             }}
                             onMouseLeave={e => {
+                                e.currentTarget.style.transform = 'none';
                                 e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
                                 e.currentTarget.style.borderColor = 'rgba(148,103,251,0.25)';
                             }}
